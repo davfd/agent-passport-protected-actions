@@ -1,0 +1,17 @@
+# dependencies/build outputs
+node_modules/
+dist/
+target/
+coverage/
+
+# secrets/local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

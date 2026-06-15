@@ -1,0 +1,49 @@
+{
+  "schema": "leonardo.t3n.action-receipt.v0.1",
+  "issuedAt": "2026-06-15T05:13:23.509Z",
+  "agent": {
+    "name": "leonardo-protected-action-agent",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "passportId": "awe_1a4dc1ccb686fe2b2bb046c1f528b737220f8400e2f0e1a1c40869a2bab15063",
+  "authority": {
+    "allowedActions": [
+      "agent-passport.external-registry-anchor"
+    ],
+    "allowedTargets": [
+      "terminal3.testnet.external-registry"
+    ],
+    "maxAmountCents": 0,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "request": {
+    "action": "agent-passport.external-registry-anchor",
+    "target": "terminal3.testnet.external-registry",
+    "amountCents": 0,
+    "currency": "USD",
+    "purpose": "Terminal 3 no-money/no-PII audit-probe invocation",
+    "piiRefHashes": []
+  },
+  "decision": {
+    "allowed": true,
+    "reason": "in-scope",
+    "requestId": "req-audit-20260615t051314496z",
+    "decidedAt": "2026-06-15T05:13:20.863Z"
+  },
+  "evidence": {
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+      "status": "live-audited",
+      "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd:sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "auditBatchKey": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd",
+      "auditEventHash": "sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "auditEventCommitted": true,
+      "responseHash": "sha256:aa37ea99abbe12179e42d16810d5c520402a3ef92f046dc44392235840fa40a5"
+    },
+    "executePayloadHash": "sha256:89f1b27c716205fdeae059afcb4fd5d7740c601d89430bb3c9cac64cc89f0ae4"
+  },
+  "receiptHash": "sha256:4324628f9927999ae8a2c4ca322cfbbec9c90c6c045cfda348e87869286ee152"
+}

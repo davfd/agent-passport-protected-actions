@@ -1,0 +1,28 @@
+{
+  "schema": "leonardo.agent-passport.consent-policy-source.v0.1",
+  "policyId": "policy-agent-passport-demo-v0.1",
+  "version": "0.1.0",
+  "title": "Agent Passport demo consent policy source",
+  "scope": {
+    "allowedActions": ["payment.intent.create"],
+    "allowedTargets": ["stripe-test-merchant"],
+    "maxAmountCents": 50000,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "requirements": {
+    "requiresSignedConsent": true,
+    "requiresAudit": true,
+    "rawPiiAllowed": false,
+    "realMoneyMovementAllowed": false
+  },
+  "claimBoundary": {
+    "proves": "policy-source hash anchoring and fail-closed local enforcement for the demo scope",
+    "doesNotProve": [
+      "legal delegated authority",
+      "production identity proofing",
+      "raw PII safety",
+      "real payment movement"
+    ]
+  }
+}

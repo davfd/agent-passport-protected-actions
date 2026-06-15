@@ -1,0 +1,148 @@
+{
+  "startedAt": "2026-06-15T17:39:01.793Z",
+  "environment": "testnet",
+  "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+  "action": "agent-passport.safe-egress",
+  "target": "terminal3.testnet.safe-egress",
+  "amountCents": 0,
+  "pii": false,
+  "rawPiiReturned": false,
+  "moneyMovement": false,
+  "contract": {
+    "sourceDir": "../repos/z-safe-egress-demo",
+    "wasm": "../repos/z-safe-egress-demo/target/wasm32-wasip2/release/z_safe_egress_demo.wasm",
+    "wasmSha256": "224ce92c892d9b2262639fd5ba5fe00ff9a33811b5c202cb878d72c9f2f4de79",
+    "tail": "ap-egress-mqfhz95t",
+    "version": "0.1.0",
+    "allowedHost": "httpbin.org",
+    "allowedUrl": "https://httpbin.org/post",
+    "functions": [
+      "ping-allowed",
+      "ping-placeholder-denial"
+    ]
+  },
+  "phases": [
+    {
+      "phase": "authenticate",
+      "ok": true
+    },
+    {
+      "phase": "register",
+      "ok": true
+    },
+    {
+      "phase": "denied-egress",
+      "ok": true,
+      "receipt": {
+        "path": "receipts/safe_egress_denied-egress-req-egress-denied-20260615t173901793z-live-failed.json",
+        "basename": "safe_egress_denied-egress-req-egress-denied-20260615t173901793z-live-failed.json",
+        "status": "live-failed",
+        "receiptHash": "sha256:fcefe46fc573a738ef85a706cc473179dca749fc745bf1c977612e42d571d2fa",
+        "wholeFileSha256": "f6dd3c5b3579e94a1cdf62e7e4c2cfb2d74caadbfc8e36daf4b65cb13e8971b8"
+      }
+    },
+    {
+      "phase": "self-grant",
+      "ok": true
+    },
+    {
+      "phase": "placeholder-denial",
+      "ok": true,
+      "receipt": {
+        "path": "receipts/safe_egress_placeholder-denial-req-placeholder-denied-20260615t173901793z-live-failed.json",
+        "basename": "safe_egress_placeholder-denial-req-placeholder-denied-20260615t173901793z-live-failed.json",
+        "status": "live-failed",
+        "receiptHash": "sha256:f21db63749cb38c7489587e41438af54372cd36753203486c3ecff40a9544687",
+        "wholeFileSha256": "016190feed620bfc75492f4892adaed8c18d61d1077a46248b9c7be9a591e8e7"
+      }
+    },
+    {
+      "phase": "allowed-egress",
+      "ok": true,
+      "receipt": {
+        "path": "receipts/safe_egress_allowed-egress-req-egress-allowed-20260615t173901793z-live-audited.json",
+        "basename": "safe_egress_allowed-egress-req-egress-allowed-20260615t173901793z-live-audited.json",
+        "status": "live-audited",
+        "receiptHash": "sha256:59f5e3e3b30c897f61abe70b49878e140d859809be2798b2174c5d453268f663",
+        "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ecc5da9f95c946503c2d9924f58ee273dbd2efba8d03a12df000000a239289130cc5673fa:sha256:1874bc2bc4906048d641e66521dc5c014b7715794e350a4d660133ac23e57ce0",
+        "auditEventHash": "sha256:1874bc2bc4906048d641e66521dc5c014b7715794e350a4d660133ac23e57ce0",
+        "wholeFileSha256": "efb8351dd81192ceb7efaa3b758e2c567572b7dc049a15ff3d6265eaa1aa4618"
+      }
+    }
+  ],
+  "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+  "address": "[PUBLIC_TESTNET_ADDRESS_REDACTED]",
+  "register": {
+    "ok": true,
+    "resultHash": "sha256:faa92f40569d6a4b66e93473f4bc2ae97fea8ea631c8db2fc73f7a9b4117b541"
+  },
+  "scriptName": "z:5c946503c2d9924f58ee273dbd2efba8d03a12df:ap-egress-mqfhz95t",
+  "scriptVersion": "0.1.0",
+  "deniedEgress": {
+    "path": "receipts/safe_egress_denied-egress-req-egress-denied-20260615t173901793z-live-failed.json",
+    "basename": "safe_egress_denied-egress-req-egress-denied-20260615t173901793z-live-failed.json",
+    "status": "live-failed",
+    "receiptHash": "sha256:fcefe46fc573a738ef85a706cc473179dca749fc745bf1c977612e42d571d2fa",
+    "wholeFileSha256": "f6dd3c5b3579e94a1cdf62e7e4c2cfb2d74caadbfc8e36daf4b65cb13e8971b8"
+  },
+  "selfGrant": {
+    "ok": true,
+    "inputHash": "sha256:aeaa79a4acb455b72c27693d9cf1e48c4f50a0f09f9c0d765142b2621d596cb1",
+    "resultHash": "sha256:ac9daef87f19c31a5d6189d07d7c64db2e8a50f33e6c8441d9fb88b845a729ef"
+  },
+  "placeholderDenial": {
+    "path": "receipts/safe_egress_placeholder-denial-req-placeholder-denied-20260615t173901793z-live-failed.json",
+    "basename": "safe_egress_placeholder-denial-req-placeholder-denied-20260615t173901793z-live-failed.json",
+    "status": "live-failed",
+    "receiptHash": "sha256:f21db63749cb38c7489587e41438af54372cd36753203486c3ecff40a9544687",
+    "wholeFileSha256": "016190feed620bfc75492f4892adaed8c18d61d1077a46248b9c7be9a591e8e7"
+  },
+  "allowedEgress": {
+    "receipt": {
+      "path": "receipts/safe_egress_allowed-egress-req-egress-allowed-20260615t173901793z-live-audited.json",
+      "basename": "safe_egress_allowed-egress-req-egress-allowed-20260615t173901793z-live-audited.json",
+      "status": "live-audited",
+      "receiptHash": "sha256:59f5e3e3b30c897f61abe70b49878e140d859809be2798b2174c5d453268f663",
+      "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ecc5da9f95c946503c2d9924f58ee273dbd2efba8d03a12df000000a239289130cc5673fa:sha256:1874bc2bc4906048d641e66521dc5c014b7715794e350a4d660133ac23e57ce0",
+      "auditEventHash": "sha256:1874bc2bc4906048d641e66521dc5c014b7715794e350a4d660133ac23e57ce0",
+      "wholeFileSha256": "efb8351dd81192ceb7efaa3b758e2c567572b7dc049a15ff3d6265eaa1aa4618"
+    },
+    "responseHash": "sha256:cb47d5e86e8f528563a16761618d57424f4ebb053e79551c80374ba2cc9db903",
+    "response": {
+      "ok": true,
+      "requestId": "req-egress-allowed-20260615t173901793z",
+      "action": "agent-passport.safe-egress",
+      "target": "terminal3.testnet.safe-egress",
+      "outcome": "success",
+      "tenantSeqNo": 36100,
+      "contractId": 162,
+      "httpStatus": 200,
+      "responseBytes": 822,
+      "rawPiiReturned": false,
+      "moneyMovement": false,
+      "placeholderMode": "none"
+    },
+    "audit": {
+      "binding": {
+        "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ecc5da9f95c946503c2d9924f58ee273dbd2efba8d03a12df000000a239289130cc5673fa:sha256:1874bc2bc4906048d641e66521dc5c014b7715794e350a4d660133ac23e57ce0",
+        "auditBatchKey": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ecc5da9f95c946503c2d9924f58ee273dbd2efba8d03a12df000000a239289130cc5673fa",
+        "auditEventHash": "sha256:1874bc2bc4906048d641e66521dc5c014b7715794e350a4d660133ac23e57ce0",
+        "committed": true,
+        "subject": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+        "actor": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+        "vcId": null,
+        "action": "agent-passport.safe-egress",
+        "target": "terminal3.testnet.safe-egress",
+        "outcome": "success",
+        "detailsHash": "sha256:d8568f2561b8c0599f7bf61898375bc17db2bd56b9182ddb872cf615c1391bf5"
+      },
+      "auditPageHash": "sha256:0856c2119aef034a6f53023eb2bd739989dd1cd39408cfc7d6e3c4a34d3798a8",
+      "attempt": 1
+    }
+  },
+  "evidenceBoundary": {
+    "ok": true,
+    "hits": []
+  },
+  "completedAt": "2026-06-15T17:39:14.171Z"
+}

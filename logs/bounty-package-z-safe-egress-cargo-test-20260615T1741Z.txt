@@ -1,0 +1,16 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/lib.rs (repos/z-safe-egress-demo/target/debug/deps/z_safe_egress_demo-2f0a5b1455b57edf)
+
+running 2 tests
+test tests::contract_version_is_semver ... ok
+test tests::contract_version_is_v0_1_0 ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests z_safe_egress_demo
+
+running 1 test
+test src/lib.rs - __export_safe_egress_demo_impl (line 19) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+

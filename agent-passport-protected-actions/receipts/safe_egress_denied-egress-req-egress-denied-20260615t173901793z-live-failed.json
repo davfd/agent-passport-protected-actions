@@ -1,0 +1,45 @@
+{
+  "schema": "leonardo.t3n.action-receipt.v0.1",
+  "issuedAt": "2026-06-15T17:39:08.645Z",
+  "agent": {
+    "name": "leonardo-safe-egress-agent",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "passportId": "awe_42990c6ebd35b6cf675cdfdde9695ec8df6069837e8ab5a9003d366f8bd49117",
+  "authority": {
+    "allowedActions": [
+      "agent-passport.safe-egress"
+    ],
+    "allowedTargets": [
+      "terminal3.testnet.safe-egress"
+    ],
+    "maxAmountCents": 0,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "request": {
+    "action": "agent-passport.safe-egress",
+    "target": "terminal3.testnet.safe-egress",
+    "amountCents": 0,
+    "currency": "USD",
+    "purpose": "Terminal 3 no-money/no-raw-PII safe egress extension",
+    "piiRefHashes": []
+  },
+  "decision": {
+    "allowed": true,
+    "reason": "in-scope",
+    "requestId": "req-egress-denied-20260615t173901793z",
+    "decidedAt": "2026-06-15T17:39:08.223Z"
+  },
+  "evidence": {
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+      "status": "live-failed",
+      "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "error": "Error: HTTP 400: Invalid params ({\"code\":\"bad_request\",\"detail\":\"safe-egress http-with-placeholders: egress denied for host httpbin.org\",\"request_id\":\"0cad255d-427c-43d8-bd0b-5ebc16e81152\"})"
+    },
+    "executePayloadHash": "sha256:a8d877820e07f9752b598a08d5ec674fea339e67826cdd1aa39027b13952e0e7"
+  },
+  "receiptHash": "sha256:fcefe46fc573a738ef85a706cc473179dca749fc745bf1c977612e42d571d2fa"
+}

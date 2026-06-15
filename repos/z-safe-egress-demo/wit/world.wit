@@ -1,0 +1,34 @@
+/// Minimal safe egress proof for Terminal 3 ADK bounty.
+///
+/// Imports:
+/// - tenant-context: records contract/sequence context in sanitized output.
+/// - logging: emits non-PII logs and a host-stamped audit event on allowed calls.
+/// - http-with-placeholders: exercises the exact host surface for outbound calls
+///   and placeholder denial without returning raw upstream payloads.
+///
+/// No raw PII. No API keys. No real payment. No KV writes.
+package z:safe-egress-demo@0.1.0;
+
+world safe-egress-demo {
+    import host:tenant/tenant-context@1.0.0;
+    import host:interfaces/logging@2.1.0;
+    import host:interfaces/http-with-placeholders@2.1.0;
+
+    export contracts;
+}
+
+interface contracts {
+    record generic-input {
+        input:        option<list<u8>>,
+        user-profile: option<list<u8>>,
+        context:      option<list<u8>>,
+    }
+
+    /// Input JSON: { requestId: string, url: string, action?: string, target?: string }
+    /// Output JSON: sanitized status only, never upstream body.
+    ping-allowed: func(req: generic-input) -> result<list<u8>, string>;
+
+    /// Input JSON: { requestId: string, url: string, action?: string, target?: string }
+    /// Expected to fail with placeholder-denied/unknown/no-user-context before any raw profile value is returned.
+    ping-placeholder-denial: func(req: generic-input) -> result<list<u8>, string>;
+}

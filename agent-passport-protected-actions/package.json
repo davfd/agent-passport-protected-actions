@@ -1,0 +1,35 @@
+{
+  "name": "agent-passport-protected-actions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Terminal 3 ADK bounty demo: Agent Passport for scoped protected actions with audit receipts.",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "demo:local": "tsx src/cli/local-demo.ts",
+    "t3n:smoke": "tsx src/cli/t3n-smoke.ts",
+    "t3n:audit-probe": "tsx src/cli/live-audit-probe.ts",
+    "t3n:safe-egress": "tsx src/cli/safe-egress-demo.ts",
+    "t3n:sdk-breadth": "tsx src/cli/sdk-breadth-probe.ts",
+    "consent:demo": "tsx src/cli/consent-ceremony.ts",
+    "policy:demo": "tsx src/cli/policy-anchor-demo.ts",
+    "governance:demo": "tsx src/cli/governance-witness-demo.ts",
+    "registry:demo": "tsx src/cli/external-registry-anchor-demo.ts",
+    "verify": "pnpm test && pnpm typecheck && pnpm build && pnpm demo:local"
+  },
+  "dependencies": {
+    "@terminal3/t3n-sdk": "^3.5.2",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

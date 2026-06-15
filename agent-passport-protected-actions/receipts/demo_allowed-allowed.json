@@ -1,0 +1,48 @@
+{
+  "schema": "leonardo.t3n.action-receipt.v0.1",
+  "issuedAt": "2026-06-15T00:01:00.000Z",
+  "agent": {
+    "name": "leonardo-protected-action-agent",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "passportId": "awe_e797720e21473dd22193a56996772ded0fec272c7e73cd0a12480eb6393d5c38",
+  "authority": {
+    "allowedActions": [
+      "payment.intent.create",
+      "travel.flight.search"
+    ],
+    "allowedTargets": [
+      "duffel-test",
+      "stripe-test-merchant"
+    ],
+    "maxAmountCents": 50000,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "request": {
+    "action": "payment.intent.create",
+    "target": "stripe-test-merchant",
+    "amountCents": 42500,
+    "currency": "USD",
+    "purpose": "Terminal 3 bounty demo: user-approved checkout under scoped cap",
+    "piiRefHashes": [
+      "sha256:fc63856b1c56a0454a7fb88d74be73e8a3eea9efd2da3ceca38899afa9404030",
+      "sha256:172b7c1c34b66e8be2dbdcd952e74846f63001364a8c0b3418ea5e81c95e064f"
+    ]
+  },
+  "decision": {
+    "allowed": true,
+    "reason": "in-scope",
+    "requestId": "demo_allowed",
+    "decidedAt": "2026-06-15T00:01:00.000Z"
+  },
+  "evidence": {
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "resolved-by-@terminal3/t3n-sdk-when-T3N_API_KEY-is-present",
+      "status": "dry-run-no-api-key"
+    },
+    "executePayloadHash": "sha256:141a0e1b69aff060377d17d108a8ecf995f6f2a56c0cf5edbdfd0eb5ad1d0def"
+  },
+  "receiptHash": "sha256:317b2cab394fb1fed2430bbc9abbc47baa40dbe4dbad905ef1aa9dc8995c2552"
+}

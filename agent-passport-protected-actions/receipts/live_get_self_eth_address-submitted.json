@@ -1,0 +1,45 @@
+{
+  "schema": "leonardo.t3n.action-receipt.v0.1",
+  "issuedAt": "2026-06-15T02:29:30.000Z",
+  "agent": {
+    "name": "leonardo-protected-action-agent",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "passportId": "awe_2f33ace1d3ab4ee0a8d456bf86c51395808f775788df1235203efd56b18ee64d",
+  "authority": {
+    "allowedActions": [
+      "tee:user.get-self-eth-address"
+    ],
+    "allowedTargets": [
+      "self"
+    ],
+    "maxAmountCents": 0,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "request": {
+    "action": "tee:user.get-self-eth-address",
+    "target": "self",
+    "amountCents": 0,
+    "currency": "USD",
+    "purpose": "Terminal 3 no-money/no-PII protected read smoke: T3nClient.getSelfEthAddress",
+    "piiRefHashes": []
+  },
+  "decision": {
+    "allowed": true,
+    "reason": "in-scope",
+    "requestId": "live_get_self_eth_address",
+    "decidedAt": "2026-06-15T02:29:30.000Z"
+  },
+  "evidence": {
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+      "status": "live-submitted",
+      "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "responseHash": "sha256:f175836fc46f4da7aedf17529a0bb2360eb2e90b6f449417f7865e13f7ac0287"
+    },
+    "executePayloadHash": "sha256:f06c19e0db3627335c75afa0061f07459d62812a57a10942e2bfcf5f785cd334"
+  },
+  "receiptHash": "sha256:ea56b71749d81e66211c09ef8be1de913415a343c5d352042f41fbeae129e088"
+}

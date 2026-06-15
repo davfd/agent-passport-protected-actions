@@ -1,0 +1,82 @@
+{
+  "schema": "leonardo.t3n.action-receipt.v0.1",
+  "issuedAt": "2026-06-15T17:45:54.426Z",
+  "agent": {
+    "name": "leonardo-protected-action-agent",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "passportId": "awe_a64b392f68c0a19b391d246c529544e032fa7305c4755055f65dd295b4f8bf97",
+  "authority": {
+    "allowedActions": [
+      "payment.intent.create"
+    ],
+    "allowedTargets": [
+      "stripe-test-merchant"
+    ],
+    "maxAmountCents": 50000,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "request": {
+    "action": "payment.intent.create",
+    "target": "stripe-test-merchant",
+    "amountCents": 42500,
+    "currency": "USD",
+    "purpose": "external audit registry anchored policy + governance witness demo; no raw PII, no money movement",
+    "piiRefHashes": [
+      "sha256:fc63856b1c56a0454a7fb88d74be73e8a3eea9efd2da3ceca38899afa9404030",
+      "sha256:172b7c1c34b66e8be2dbdcd952e74846f63001364a8c0b3418ea5e81c95e064f"
+    ]
+  },
+  "decision": {
+    "allowed": true,
+    "reason": "in-scope",
+    "requestId": "req-external-registry-20260615t174554409z",
+    "decidedAt": "2026-06-15T17:45:54.425Z"
+  },
+  "evidence": {
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "not-submitted-external-registry-anchor-demo",
+      "status": "dry-run-no-api-key"
+    },
+    "executePayloadHash": "sha256:9c2fa3d2eb7cc909150c56d9d410397328e1d0f5b8f4328167a148390d25aa37",
+    "delegation": {
+      "grantId": "deleg_5fd9136fa61d38c713a0e84ee1b37268",
+      "grantHash": "sha256:4aa5518c47b19809178afa01fa894efa2311e2213bb022ecfd9373cb30701104",
+      "humanRefHash": "sha256:15005de594910fbdc61ec19be34d5b0391e3805cbf7d21b9e83473b1c1f42b88",
+      "evidenceHash": "sha256:8e4467f758edb79c378eb7ad3f9ab6eef0a031e5325377860e149ad01609404f",
+      "nonceHash": "sha256:eb26d198db031d4871813fbc4baa718e2a12b11667cf8488abc2c26230a1c546",
+      "consentChallengeHash": "sha256:d9b89337aab82f1c12da23b128be047c10bc11c7807d2a4384631e0db885920a",
+      "consentSignatureHash": "sha256:726328fafce780e7cbdf1d04180d79cdae2db5812b32f27fcac21bb73032b44e",
+      "publicKeyFingerprint": "sha256:0b57ae23d92676a4967f1e97df59caa2a427a978f4a4b4a2e4b96a745b8a3ed9"
+    },
+    "policy": {
+      "policyId": "policy-agent-passport-demo-v0.1",
+      "policyHash": "sha256:4a9b1b0780ce04af1e6f6b9e2ccd8351c697a3c38de99dcb5036fca438d2a369",
+      "version": "0.1.0",
+      "sourceUri": "file://policies/agent-passport-consent-policy-v0.1.json",
+      "sourceHash": "sha256:cc364995d1a687caa1d0cde1af6a3096dfffc633584a23fd684b3c29d766ef2b",
+      "requiresSignedConsent": true,
+      "requiresAudit": true
+    },
+    "governanceWitness": {
+      "witnessId": "witness-local-governance-demo-1",
+      "witnessRole": "policy-governance-witness",
+      "attestationHash": "sha256:b3fa904bc215fa266359fdccec05680fa7d48a80ec16a5769a67358f6bad2fac",
+      "signatureHash": "sha256:5ef949a514cddd6253b26443dad8722dfbb4235836c9bcdbc88a600c8ac835f0",
+      "publicKeyFingerprint": "sha256:48cc4a37b18bd5c0930618d1ad7f1f7d725f473e2ccf79f2faabb0894f8ddfe0",
+      "challengeHash": "sha256:1f47ecfdcdf36692c86cd8a3eab9dc6edb891e422ea7514bcae3af3efd0be843"
+    },
+    "externalRegistry": {
+      "registryId": "t3n-audit:live_audit_probe-req-audit-20260615t051314496z-live-audited",
+      "registryKind": "terminal3-testnet-audit",
+      "registryUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+      "registryRecordId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd:sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "registryRecordHash": "sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "subjectHash": "sha256:83f4e5685732c5a865b79d7ec941d92a089be1e3deb615fbe9596cd829fec338",
+      "anchorHash": "sha256:227423ad7532e1b36733ee0575108acc08b507eba7b7b828c69a7fb0f98e02f4"
+    }
+  },
+  "receiptHash": "sha256:aa99ab6697b00f9514b461c798b9fdd779bf579084dba34ff6d6d0142c0fb25a"
+}

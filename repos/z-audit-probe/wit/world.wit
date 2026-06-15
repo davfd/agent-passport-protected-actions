@@ -1,0 +1,27 @@
+/// Minimal z-namespace audit probe for Terminal 3 Agent Passport build track.
+///
+/// Imports:
+/// - tenant-context: records contract/sequence context in the sanitized response.
+/// - logging: emits debug logs plus one host-stamped audit event via logging.audit.
+///
+/// No raw PII. No HTTP. No money movement. No KV writes.
+package z:audit-probe@0.1.0;
+
+world audit-probe {
+    import host:tenant/tenant-context@1.0.0;
+    import host:interfaces/logging@2.1.0;
+
+    export contracts;
+}
+
+interface contracts {
+    record generic-input {
+        input:        option<list<u8>>,
+        user-profile: option<list<u8>>,
+        context:      option<list<u8>>,
+    }
+
+    /// Input JSON: { requestId: string, action?: string, target?: string }
+    /// Output JSON: { ok, requestId, action, target, tenantSeqNo, contractId, amountCents, pii }
+    audit-ping: func(req: generic-input) -> result<list<u8>, string>;
+}

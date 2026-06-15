@@ -1,0 +1,45 @@
+{
+  "schema": "leonardo.t3n.action-receipt.v0.1",
+  "issuedAt": "2026-06-15T17:45:54.425Z",
+  "agent": {
+    "name": "leonardo-protected-action-agent",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "passportId": "awe_a64b392f68c0a19b391d246c529544e032fa7305c4755055f65dd295b4f8bf97",
+  "authority": {
+    "allowedActions": [
+      "payment.intent.create"
+    ],
+    "allowedTargets": [
+      "stripe-test-merchant"
+    ],
+    "maxAmountCents": 50000,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "request": {
+    "action": "payment.intent.create",
+    "target": "stripe-test-merchant",
+    "amountCents": 42500,
+    "currency": "USD",
+    "purpose": "external audit registry anchored policy + governance witness demo; no raw PII, no money movement",
+    "piiRefHashes": [
+      "sha256:fc63856b1c56a0454a7fb88d74be73e8a3eea9efd2da3ceca38899afa9404030",
+      "sha256:172b7c1c34b66e8be2dbdcd952e74846f63001364a8c0b3418ea5e81c95e064f"
+    ]
+  },
+  "decision": {
+    "allowed": false,
+    "reason": "external registry anchor is required for this protected action",
+    "requestId": "req-registry-missing-20260615t174554409z",
+    "decidedAt": "2026-06-15T17:45:54.424Z"
+  },
+  "evidence": {
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "not-submitted-external-registry-anchor-demo",
+      "status": "dry-run-no-api-key"
+    }
+  },
+  "receiptHash": "sha256:afc9d435238d0a2cf70e745bb502c64414bdf81c86530914cc28d43a3765c840"
+}

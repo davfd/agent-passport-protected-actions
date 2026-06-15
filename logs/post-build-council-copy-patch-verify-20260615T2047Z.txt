@@ -1,0 +1,35 @@
+$ pnpm test && pnpm typecheck && pnpm build && pnpm demo:local
+$ vitest run
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.8 [39m[90m/home/exor/Leonardo/hackathons/terminal3-adk/agent-passport-protected-actions[39m
+
+ [32m✓[39m tests/sdk-breadth.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/demo.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/safe-egress.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/consent.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/passport.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/t3n.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 241[2mms[22m[39m
+ [32m✓[39m tests/registry.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/governance.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/delegation.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/policy.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/receipt.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/audit.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/protected-action.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m13 passed[39m[22m[90m (13)[39m
+[2m      Tests [22m [1m[32m52 passed[39m[22m[90m (52)[39m
+[2m   Start at [22m 16:47:30
+[2m   Duration [22m 605ms[2m (transform 395ms, setup 0ms, import 769ms, tests 365ms, environment 1ms)[22m
+
+$ tsc --noEmit
+$ tsc -p tsconfig.json
+$ tsx src/cli/local-demo.ts
+ALLOWED in-scope -> /home/exor/Leonardo/hackathons/terminal3-adk/agent-passport-protected-actions/receipts/demo_allowed-allowed.json
+receiptHash=sha256:317b2cab394fb1fed2430bbc9abbc47baa40dbe4dbad905ef1aa9dc8995c2552
+REFUSED amount 65000 exceeds passport cap 50000 -> /home/exor/Leonardo/hackathons/terminal3-adk/agent-passport-protected-actions/receipts/demo_refused_over_cap-refused.json
+receiptHash=sha256:e302700e58b9996bc23bdf779efabefd2170c518e4fd39d6ceaba4d7907e472a
+REFUSED delegation grant is required for this protected action -> /home/exor/Leonardo/hackathons/terminal3-adk/agent-passport-protected-actions/receipts/demo_delegated_missing_grant-refused.json
+receiptHash=sha256:89cb6c2bc14d7519c83db961e0a00452793a5b2df9557e5664c1d43c44ad5076
+ALLOWED in-scope -> /home/exor/Leonardo/hackathons/terminal3-adk/agent-passport-protected-actions/receipts/demo_delegated_allowed-allowed.json
+receiptHash=sha256:d19fe3717846a5c2a41ab059a50dcbfc5dfb300a0395a37194acf1036b31e906

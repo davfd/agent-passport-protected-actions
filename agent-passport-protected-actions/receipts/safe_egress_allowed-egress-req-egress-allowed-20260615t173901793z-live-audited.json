@@ -1,0 +1,49 @@
+{
+  "schema": "leonardo.t3n.action-receipt.v0.1",
+  "issuedAt": "2026-06-15T17:39:14.171Z",
+  "agent": {
+    "name": "leonardo-safe-egress-agent",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "passportId": "awe_42990c6ebd35b6cf675cdfdde9695ec8df6069837e8ab5a9003d366f8bd49117",
+  "authority": {
+    "allowedActions": [
+      "agent-passport.safe-egress"
+    ],
+    "allowedTargets": [
+      "terminal3.testnet.safe-egress"
+    ],
+    "maxAmountCents": 0,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "request": {
+    "action": "agent-passport.safe-egress",
+    "target": "terminal3.testnet.safe-egress",
+    "amountCents": 0,
+    "currency": "USD",
+    "purpose": "Terminal 3 no-money/no-raw-PII safe egress extension",
+    "piiRefHashes": []
+  },
+  "decision": {
+    "allowed": true,
+    "reason": "in-scope",
+    "requestId": "req-egress-allowed-20260615t173901793z",
+    "decidedAt": "2026-06-15T17:39:10.849Z"
+  },
+  "evidence": {
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+      "status": "live-audited",
+      "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ecc5da9f95c946503c2d9924f58ee273dbd2efba8d03a12df000000a239289130cc5673fa:sha256:1874bc2bc4906048d641e66521dc5c014b7715794e350a4d660133ac23e57ce0",
+      "auditBatchKey": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ecc5da9f95c946503c2d9924f58ee273dbd2efba8d03a12df000000a239289130cc5673fa",
+      "auditEventHash": "sha256:1874bc2bc4906048d641e66521dc5c014b7715794e350a4d660133ac23e57ce0",
+      "auditEventCommitted": true,
+      "responseHash": "sha256:cb47d5e86e8f528563a16761618d57424f4ebb053e79551c80374ba2cc9db903"
+    },
+    "executePayloadHash": "sha256:74292335251a0cf02d0d08098622c9aaaa7047efd531ed851e4dfc6e64c2a558"
+  },
+  "receiptHash": "sha256:59f5e3e3b30c897f61abe70b49878e140d859809be2798b2174c5d453268f663"
+}

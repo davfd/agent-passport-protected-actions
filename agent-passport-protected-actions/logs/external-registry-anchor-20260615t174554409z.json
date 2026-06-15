@@ -1,0 +1,93 @@
+{
+  "startedAt": "2026-06-15T17:45:54.409Z",
+  "completedAt": "2026-06-15T17:45:54.426Z",
+  "ceremony": "external audit registry anchor demo",
+  "privateKeysPersisted": false,
+  "rawHumanIdentityIncluded": false,
+  "realExternalGovernanceClaimed": false,
+  "externalRegistryRecordLiveAudited": true,
+  "registryReceipt": {
+    "path": "receipts/live_audit_probe-req-audit-20260615t051314496z-live-audited.json",
+    "wholeFileSha256": "ce6f38fbaaed85bcb0819e75b2b114c0e0eb85261943ffba5b10cf9805b7d873",
+    "receiptHash": "sha256:4324628f9927999ae8a2c4ca322cfbbec9c90c6c045cfda348e87869286ee152",
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+      "status": "live-audited",
+      "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd:sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "auditBatchKey": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd",
+      "auditEventHash": "sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "auditEventCommitted": true,
+      "responseHash": "sha256:aa37ea99abbe12179e42d16810d5c520402a3ef92f046dc44392235840fa40a5"
+    }
+  },
+  "subject": {
+    "subjectHash": "sha256:83f4e5685732c5a865b79d7ec941d92a089be1e3deb615fbe9596cd829fec338",
+    "policyHash": "sha256:4a9b1b0780ce04af1e6f6b9e2ccd8351c697a3c38de99dcb5036fca438d2a369",
+    "grantHash": "sha256:4aa5518c47b19809178afa01fa894efa2311e2213bb022ecfd9373cb30701104",
+    "governanceWitnessAttestationHash": "sha256:b3fa904bc215fa266359fdccec05680fa7d48a80ec16a5769a67358f6bad2fac",
+    "requestHash": "sha256:6778f2d74a4cfa23a0ce19cad9e3e228912ea30d11c964a822e36a8681a9b23c"
+  },
+  "anchor": {
+    "registryId": "t3n-audit:live_audit_probe-req-audit-20260615t051314496z-live-audited",
+    "registryKind": "terminal3-testnet-audit",
+    "registryUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+    "registryRecordId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd:sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+    "registryRecordHash": "sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+    "subjectHash": "sha256:83f4e5685732c5a865b79d7ec941d92a089be1e3deb615fbe9596cd829fec338",
+    "anchorHash": "sha256:227423ad7532e1b36733ee0575108acc08b507eba7b7b828c69a7fb0f98e02f4"
+  },
+  "negativeControl": {
+    "requestId": "req-registry-missing-20260615t174554409z",
+    "allowed": false,
+    "reason": "external registry anchor is required for this protected action",
+    "receiptPath": "receipts/demo_external_registry_missing-20260615t174554409z-refused.json",
+    "wholeFileSha256": "66bae5ffadc88ff7eebbfa6de243cbd3bd8df7b6daf84ee79f6f5bd300b1ccc8",
+    "receiptHash": "sha256:afc9d435238d0a2cf70e745bb502c64414bdf81c86530914cc28d43a3765c840"
+  },
+  "positiveControl": {
+    "requestId": "req-external-registry-20260615t174554409z",
+    "allowed": true,
+    "reason": "in-scope",
+    "receiptPath": "receipts/demo_external_registry_anchor-20260615t174554409z-allowed.json",
+    "wholeFileSha256": "c6fc0ba671742891e8e355939d5330fef4b371c56ce816c1869166cc9593ddc6",
+    "receiptHash": "sha256:aa99ab6697b00f9514b461c798b9fdd779bf579084dba34ff6d6d0142c0fb25a",
+    "externalRegistry": {
+      "registryId": "t3n-audit:live_audit_probe-req-audit-20260615t051314496z-live-audited",
+      "registryKind": "terminal3-testnet-audit",
+      "registryUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+      "registryRecordId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd:sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "registryRecordHash": "sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "subjectHash": "sha256:83f4e5685732c5a865b79d7ec941d92a089be1e3deb615fbe9596cd829fec338",
+      "anchorHash": "sha256:227423ad7532e1b36733ee0575108acc08b507eba7b7b828c69a7fb0f98e02f4"
+    },
+    "governanceWitness": {
+      "witnessId": "witness-local-governance-demo-1",
+      "witnessRole": "policy-governance-witness",
+      "attestationHash": "sha256:b3fa904bc215fa266359fdccec05680fa7d48a80ec16a5769a67358f6bad2fac",
+      "signatureHash": "sha256:5ef949a514cddd6253b26443dad8722dfbb4235836c9bcdbc88a600c8ac835f0",
+      "publicKeyFingerprint": "sha256:48cc4a37b18bd5c0930618d1ad7f1f7d725f473e2ccf79f2faabb0894f8ddfe0",
+      "challengeHash": "sha256:1f47ecfdcdf36692c86cd8a3eab9dc6edb891e422ea7514bcae3af3efd0be843"
+    },
+    "policy": {
+      "policyId": "policy-agent-passport-demo-v0.1",
+      "policyHash": "sha256:4a9b1b0780ce04af1e6f6b9e2ccd8351c697a3c38de99dcb5036fca438d2a369",
+      "version": "0.1.0",
+      "sourceUri": "file://policies/agent-passport-consent-policy-v0.1.json",
+      "sourceHash": "sha256:cc364995d1a687caa1d0cde1af6a3096dfffc633584a23fd684b3c29d766ef2b",
+      "requiresSignedConsent": true,
+      "requiresAudit": true
+    },
+    "delegation": {
+      "grantId": "deleg_5fd9136fa61d38c713a0e84ee1b37268",
+      "grantHash": "sha256:4aa5518c47b19809178afa01fa894efa2311e2213bb022ecfd9373cb30701104",
+      "humanRefHash": "sha256:15005de594910fbdc61ec19be34d5b0391e3805cbf7d21b9e83473b1c1f42b88",
+      "evidenceHash": "sha256:8e4467f758edb79c378eb7ad3f9ab6eef0a031e5325377860e149ad01609404f",
+      "nonceHash": "sha256:eb26d198db031d4871813fbc4baa718e2a12b11667cf8488abc2c26230a1c546",
+      "consentChallengeHash": "sha256:d9b89337aab82f1c12da23b128be047c10bc11c7807d2a4384631e0db885920a",
+      "consentSignatureHash": "sha256:726328fafce780e7cbdf1d04180d79cdae2db5812b32f27fcac21bb73032b44e",
+      "publicKeyFingerprint": "sha256:0b57ae23d92676a4967f1e97df59caa2a427a978f4a4b4a2e4b96a745b8a3ed9"
+    }
+  }
+}

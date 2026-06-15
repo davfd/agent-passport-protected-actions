@@ -1,0 +1,114 @@
+{
+  "startedAt": "2026-06-15T03:06:51.722Z",
+  "environment": "testnet",
+  "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+  "intendedNodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+  "requestId": "req-audit-20260615t030651722z",
+  "action": "agent-passport.audit-probe",
+  "target": "terminal3.testnet.audit-probe",
+  "amountCents": 0,
+  "pii": false,
+  "contract": {
+    "sourceDir": "../repos/z-audit-probe",
+    "wasm": "../repos/z-audit-probe/target/wasm32-wasip2/release/z_audit_probe_audit_record.wasm",
+    "wasmSha256": "f2bfc503511f6ff3a5105d43e445a714a5847eeb7ff8910242485219ce749a70",
+    "tail": "ap-audit-probe",
+    "version": "0.1.2",
+    "functionName": "audit-ping"
+  },
+  "phases": [
+    {
+      "phase": "authenticate",
+      "ok": true
+    },
+    {
+      "phase": "register",
+      "ok": true
+    },
+    {
+      "phase": "execute",
+      "ok": true
+    }
+  ],
+  "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+  "address": "[PUBLIC_TESTNET_ADDRESS_REDACTED]",
+  "tenantMe": {
+    "tenant": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+    "label": "testnet-dev",
+    "status": "active",
+    "quotas": {
+      "max_contracts": 10,
+      "max_maps": 50,
+      "max_map_keys": 10000,
+      "max_inline_bytes": 10485760,
+      "max_cas_bytes": 1073741824,
+      "max_value_bytes": 262144,
+      "max_wasm_bytes": 1048576,
+      "fuel_per_call_max": 50000000,
+      "fuel_per_minute_max": 500000000,
+      "writes_per_minute_max": 600,
+      "outbox_calls_per_minute_max": 10,
+      "cas_retention_days": null,
+      "current_inline_bytes": 0,
+      "current_cas_bytes": 0,
+      "log_max_entries": 1000,
+      "log_max_bytes": 1048576
+    },
+    "created_at": 1781487216
+  },
+  "register": {
+    "ok": true,
+    "resultHash": "sha256:06b075b7746945b2449e7c25c035dac4e21dae2b3cb9dc8a631ea6d161c56389",
+    "result": {
+      "name": "z:5c946503c2d9924f58ee273dbd2efba8d03a12df:ap-audit-probe",
+      "contract_id": 129
+    }
+  },
+  "scriptName": "z:5c946503c2d9924f58ee273dbd2efba8d03a12df:ap-audit-probe",
+  "scriptVersion": "0.1.2",
+  "execute": {
+    "ok": true,
+    "responseHash": "sha256:9c5bdbeb5a5ee5ea89f5fbb8dc926e2c50350d699936ac8c516829dba185426a",
+    "response": {
+      "ok": true,
+      "requestId": "req-audit-20260615t030651722z",
+      "action": "agent-passport.audit-probe",
+      "target": "terminal3.testnet.audit-probe",
+      "outcome": "success",
+      "tenantSeqNo": 33650,
+      "contractId": 129,
+      "amountCents": 0,
+      "pii": false
+    }
+  },
+  "auditPoll": {
+    "attempt": 1,
+    "pageHash": "sha256:710fca23c14be17efc68309673e309a471783203b28c5b6449ea9a4879f43dad",
+    "batchCount": 1,
+    "binding": {
+      "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec93f1ef55c946503c2d9924f58ee273dbd2efba8d03a12df00000081d60f0617e4b2ef06:sha256:8c60e69f7af5b79e839943f6d93311e60612bee27c145eeaa62bcc88d3084b80",
+      "auditBatchKey": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec93f1ef55c946503c2d9924f58ee273dbd2efba8d03a12df00000081d60f0617e4b2ef06",
+      "auditEventHash": "sha256:8c60e69f7af5b79e839943f6d93311e60612bee27c145eeaa62bcc88d3084b80",
+      "committed": true,
+      "subject": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "actor": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "vcId": null,
+      "action": "agent-passport.audit-probe",
+      "target": "terminal3.testnet.audit-probe",
+      "outcome": "success",
+      "detailsHash": "sha256:8b8e8142a39c1e7ef4ba0d24833ee2a2fd24a33069a8d83b4d81cf2b38c30da9"
+    }
+  },
+  "auditPageHash": "sha256:710fca23c14be17efc68309673e309a471783203b28c5b6449ea9a4879f43dad",
+  "receipt": {
+    "path": "receipts/live_audit_probe-req-audit-20260615t030651722z-live-audited.json",
+    "basename": "live_audit_probe-req-audit-20260615t030651722z-live-audited.json",
+    "status": "live-audited",
+    "receiptHash": "sha256:89df2ddcf390a45745eaa6460bc7b8f94a0aec69ccfef2f92046300b37e80a03",
+    "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec93f1ef55c946503c2d9924f58ee273dbd2efba8d03a12df00000081d60f0617e4b2ef06:sha256:8c60e69f7af5b79e839943f6d93311e60612bee27c145eeaa62bcc88d3084b80",
+    "auditBatchKey": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec93f1ef55c946503c2d9924f58ee273dbd2efba8d03a12df00000081d60f0617e4b2ef06",
+    "auditEventHash": "sha256:8c60e69f7af5b79e839943f6d93311e60612bee27c145eeaa62bcc88d3084b80",
+    "wholeFileSha256": "137743ea9e1791aa797c4d9c4bcb10969edaba6ca8fe6f724faedbc00abd54e8"
+  },
+  "completedAt": "2026-06-15T03:06:59.826Z"
+}

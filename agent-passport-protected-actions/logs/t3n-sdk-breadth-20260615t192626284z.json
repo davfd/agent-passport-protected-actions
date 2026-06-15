@@ -1,0 +1,110 @@
+{
+  "startedAt": "2026-06-15T19:26:26.284Z",
+  "environment": "testnet",
+  "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+  "scope": "SDK breadth probe: auth, usage, wallet, human-identity-status boundary, audit-read",
+  "safeBoundary": {
+    "testnetOnly": true,
+    "noRawPiiReturned": true,
+    "noMoneyMovement": true,
+    "productionTrustClaim": false,
+    "humanIdentityProofClaim": false,
+    "realPaymentClaim": false,
+    "rawPiiDisclosureClaim": false
+  },
+  "phases": [
+    {
+      "phase": "authenticate",
+      "ok": true
+    },
+    {
+      "phase": "getUsage",
+      "ok": true,
+      "responseHash": "sha256:09538327440cd976bc5a41df8beb57779070a6dd5773059cbced61bc89f4a36b"
+    },
+    {
+      "phase": "getSelfEthAddress",
+      "ok": true,
+      "addressHash": "sha256:f175836fc46f4da7aedf17529a0bb2360eb2e90b6f449417f7865e13f7ac0287"
+    },
+    {
+      "phase": "listUserWallets",
+      "ok": true,
+      "primaryAddressHash": "sha256:f175836fc46f4da7aedf17529a0bb2360eb2e90b6f449417f7865e13f7ac0287",
+      "secondaryCount": 0
+    },
+    {
+      "phase": "getWalletHistory",
+      "ok": true,
+      "historyHash": "sha256:a5a156b69aeab2e35e6242a3f9ecbcd8b0c06c6a8eeb5167168c846855b8c49c"
+    },
+    {
+      "phase": "human-identity-status",
+      "ok": false,
+      "summary": {
+        "outcome": "refused",
+        "error": "Error: HTTP 400: Invalid params ({\"code\":\"bad_request\",\"detail\":\"precondition_failed: kyc-status called before create-kyc-provider-session\",\"request_id\":\"dc3f3591-9fdb-4fc1-abd9-738ef995cdfa\"})",
+        "safeClaim": "not-proved-by-this-probe"
+      }
+    },
+    {
+      "phase": "getAuditEvents",
+      "ok": true,
+      "batchCount": 5,
+      "eventCount": 5,
+      "responseHash": "sha256:e23ed7ee90162a9345f0655b901a2ae297e139c896449527eb8e40b5288f0f45"
+    }
+  ],
+  "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+  "receipt": {
+    "schema": "leonardo.t3n.sdk-breadth-receipt.v0.1",
+    "issuedAt": "2026-06-15T19:26:31.667Z",
+    "sdkVersion": "3.5.2",
+    "environment": "testnet",
+    "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+    "surfaces": {
+      "auth": {
+        "ok": true,
+        "addressHash": "sha256:2c3f6be6bc6edc6ae450f0d32f1b387e285d9b01585af7336ce4b950b938d752"
+      },
+      "usage": {
+        "ok": true,
+        "responseHash": "sha256:09538327440cd976bc5a41df8beb57779070a6dd5773059cbced61bc89f4a36b",
+        "balanceAvailable": 1546
+      },
+      "wallet": {
+        "ok": true,
+        "primaryAddressHash": "sha256:9ea54a5c38bd3ab40504f9979e5092c42ee3bc3c85ee0d2597db8f12a65c17a4",
+        "secondaryAddressHashes": [],
+        "historyHash": "sha256:a5a156b69aeab2e35e6242a3f9ecbcd8b0c06c6a8eeb5167168c846855b8c49c"
+      },
+      "humanIdentity": {
+        "outcome": "refused",
+        "error": "Error: HTTP 400: Invalid params ({\"code\":\"bad_request\",\"detail\":\"precondition_failed: kyc-status called before create-kyc-provider-session\",\"request_id\":\"dc3f3591-9fdb-4fc1-abd9-738ef995cdfa\"})",
+        "safeClaim": "not-proved-by-this-probe"
+      },
+      "auditRead": {
+        "ok": true,
+        "batchCount": 5,
+        "eventCount": 5,
+        "responseHash": "sha256:e23ed7ee90162a9345f0655b901a2ae297e139c896449527eb8e40b5288f0f45"
+      }
+    },
+    "boundaries": {
+      "testnetOnly": true,
+      "noRawPiiReturned": true,
+      "noMoneyMovement": true,
+      "productionTrustClaim": false,
+      "humanIdentityProofClaim": false,
+      "realPaymentClaim": false,
+      "rawPiiDisclosureClaim": false
+    },
+    "receiptHash": "sha256:aa9bd48c91d8c752e1fd47a3f9fcf4e161107412e71df4d9f8aee09619d4f69f"
+  },
+  "evidenceBoundary": {
+    "ok": true,
+    "hits": []
+  },
+  "completedAt": "2026-06-15T19:26:31.675Z"
+}

@@ -1,0 +1,116 @@
+{
+  "startedAt": "2026-06-15T05:13:14.496Z",
+  "environment": "testnet",
+  "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+  "intendedNodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+  "requestId": "req-audit-20260615t051314496z",
+  "action": "agent-passport.external-registry-anchor",
+  "target": "terminal3.testnet.external-registry",
+  "amountCents": 0,
+  "pii": false,
+  "contract": {
+    "sourceDir": "../repos/z-audit-probe",
+    "wasm": "../repos/z-audit-probe/target/wasm32-wasip2/release/z_audit_probe.wasm",
+    "wasmSha256": "243ebb088c125e8f95c08bb8b042c1a03b155c0fb675f139a8bcb0e710cf232b",
+    "tail": "ap-audit-mqerc5xc",
+    "version": "0.1.0",
+    "functionName": "audit-ping"
+  },
+  "phases": [
+    {
+      "phase": "authenticate",
+      "ok": true
+    },
+    {
+      "phase": "register",
+      "ok": true
+    },
+    {
+      "phase": "execute",
+      "ok": true
+    }
+  ],
+  "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+  "address": "[PUBLIC_TESTNET_ADDRESS_REDACTED]",
+  "tenantMe": {
+    "tenant": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+    "label": "testnet-dev",
+    "status": "active",
+    "quotas": {
+      "max_contracts": 10,
+      "max_maps": 50,
+      "max_map_keys": 10000,
+      "max_inline_bytes": 10485760,
+      "max_cas_bytes": 1073741824,
+      "max_value_bytes": 262144,
+      "max_wasm_bytes": 1048576,
+      "fuel_per_call_max": 50000000,
+      "fuel_per_minute_max": 500000000,
+      "writes_per_minute_max": 600,
+      "outbox_calls_per_minute_max": 10,
+      "cas_retention_days": null,
+      "current_inline_bytes": 0,
+      "current_cas_bytes": 0,
+      "log_max_entries": 1000,
+      "log_max_bytes": 1048576
+    },
+    "created_at": 1781487216
+  },
+  "register": {
+    "ok": true,
+    "resultHash": "sha256:3dbdb428ab9ce5062770fd054777bd78c39f0dd9f3a3adcc4ced37c30fa672af",
+    "result": {
+      "name": "z:5c946503c2d9924f58ee273dbd2efba8d03a12df:ap-audit-mqerc5xc",
+      "contract_id": 150
+    }
+  },
+  "scriptName": "z:5c946503c2d9924f58ee273dbd2efba8d03a12df:ap-audit-mqerc5xc",
+  "scriptVersion": "0.1.0",
+  "execute": {
+    "ok": true,
+    "responseHash": "sha256:aa37ea99abbe12179e42d16810d5c520402a3ef92f046dc44392235840fa40a5",
+    "response": {
+      "ok": true,
+      "requestId": "req-audit-20260615t051314496z",
+      "action": "agent-passport.external-registry-anchor",
+      "target": "terminal3.testnet.external-registry",
+      "outcome": "success",
+      "tenantSeqNo": 34109,
+      "contractId": 150,
+      "amountCents": 0,
+      "pii": false,
+      "subjectHash": null,
+      "anchorKind": "external-registry-anchor"
+    }
+  },
+  "auditPoll": {
+    "attempt": 1,
+    "pageHash": "sha256:9a0ebbbf90d93b578b8e8e1bc220db9e630225a9d663be26f2e9fd74d250de78",
+    "batchCount": 6,
+    "binding": {
+      "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd:sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "auditBatchKey": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd",
+      "auditEventHash": "sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+      "committed": true,
+      "subject": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "actor": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "vcId": null,
+      "action": "agent-passport.external-registry-anchor",
+      "target": "terminal3.testnet.external-registry",
+      "outcome": "success",
+      "detailsHash": "sha256:57fe865c9d1d8e516981fcc8091204e20340b541ed9cc7c0f268f0769d2c82c6"
+    }
+  },
+  "auditPageHash": "sha256:9a0ebbbf90d93b578b8e8e1bc220db9e630225a9d663be26f2e9fd74d250de78",
+  "receipt": {
+    "path": "receipts/live_audit_probe-req-audit-20260615t051314496z-live-audited.json",
+    "basename": "live_audit_probe-req-audit-20260615t051314496z-live-audited.json",
+    "status": "live-audited",
+    "receiptHash": "sha256:4324628f9927999ae8a2c4ca322cfbbec9c90c6c045cfda348e87869286ee152",
+    "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd:sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+    "auditBatchKey": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec9b2d83d5c946503c2d9924f58ee273dbd2efba8d03a12df0000009617406eed9ec2e3cd",
+    "auditEventHash": "sha256:725f9534923c4453a86f0caa8de8459b786cb1ad6e83845babe469f665c6c2ed",
+    "wholeFileSha256": "ce6f38fbaaed85bcb0819e75b2b114c0e0eb85261943ffba5b10cf9805b7d873"
+  },
+  "completedAt": "2026-06-15T05:13:23.511Z"
+}

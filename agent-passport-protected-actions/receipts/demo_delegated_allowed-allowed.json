@@ -1,0 +1,55 @@
+{
+  "schema": "leonardo.t3n.action-receipt.v0.1",
+  "issuedAt": "2026-06-15T00:01:00.000Z",
+  "agent": {
+    "name": "leonardo-protected-action-agent",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "passportId": "awe_e797720e21473dd22193a56996772ded0fec272c7e73cd0a12480eb6393d5c38",
+  "authority": {
+    "allowedActions": [
+      "payment.intent.create",
+      "travel.flight.search"
+    ],
+    "allowedTargets": [
+      "duffel-test",
+      "stripe-test-merchant"
+    ],
+    "maxAmountCents": 50000,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "request": {
+    "action": "payment.intent.create",
+    "target": "stripe-test-merchant",
+    "amountCents": 42500,
+    "currency": "USD",
+    "purpose": "Terminal 3 build-track demo: delegated consent grant required",
+    "piiRefHashes": [
+      "sha256:fc63856b1c56a0454a7fb88d74be73e8a3eea9efd2da3ceca38899afa9404030",
+      "sha256:172b7c1c34b66e8be2dbdcd952e74846f63001364a8c0b3418ea5e81c95e064f"
+    ]
+  },
+  "decision": {
+    "allowed": true,
+    "reason": "in-scope",
+    "requestId": "demo_delegated_allowed",
+    "decidedAt": "2026-06-15T00:01:00.000Z"
+  },
+  "evidence": {
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "resolved-by-@terminal3/t3n-sdk-when-T3N_API_KEY-is-present",
+      "status": "dry-run-no-api-key"
+    },
+    "executePayloadHash": "sha256:b0b62e8a8ff52dc6852792161b5618523b578f39390a168b9235b5225c828746",
+    "delegation": {
+      "grantId": "deleg_f7baae10eef76ecdf881c7f5e7496f72",
+      "grantHash": "sha256:8d6a76206461fb42039c07d9c8249df8b79c1e35100734c43414755221029175",
+      "humanRefHash": "sha256:6718ba5c24a11369a88690b26827fe5f9eefc0f740cfa334f329191ad4ad9524",
+      "evidenceHash": "sha256:cb1c4819bd68669fa86e6f3447a614ef6302fc9099b3c278b9ed5d7101864ed0",
+      "nonceHash": "sha256:5efeb27d240078bfa4d924704eba6c408c8500ff0f5988f5b4637a7874d1f7e9"
+    }
+  },
+  "receiptHash": "sha256:d19fe3717846a5c2a41ab059a50dcbfc5dfb300a0395a37194acf1036b31e906"
+}

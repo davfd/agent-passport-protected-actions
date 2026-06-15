@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-06-15T02:29:30Z",
+  "environment": "testnet",
+  "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+  "sdkVersion": "3.5.2",
+  "address": "[PUBLIC_TESTNET_ADDRESS_REDACTED]",
+  "did": {
+    "value": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "handshake": {
+    "ok": true,
+    "hash": "b47b23373bfb0c6b32ec30d7c700ad47170520a93347442f13d25d0cb1461958",
+    "keys": [
+      "authenticated",
+      "did",
+      "expiry",
+      "sessionId"
+    ]
+  },
+  "protectedRead": {
+    "status": "live-submitted",
+    "method": "T3nClient.getSelfEthAddress",
+    "ok": true,
+    "responseHash": "f175836fc46f4da7aedf17529a0bb2360eb2e90b6f449417f7865e13f7ac0287",
+    "returnedAddress": "[PUBLIC_TESTNET_RETURNED_ADDRESS_REDACTED]"
+  },
+  "auditRead": {
+    "status": "live-audit-read",
+    "method": "T3nClient.getAuditEvents",
+    "ok": true,
+    "responseHash": "d021665a487b73477a52e550b7d6ed127b2a0b93ff94a00ff49cb0595f497242",
+    "batchCount": 0,
+    "committedBatchCount": 0,
+    "eventCount": 0,
+    "batchKeys": [],
+    "nextCursorPresent": false
+  }
+}

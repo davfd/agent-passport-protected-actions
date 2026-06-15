@@ -1,0 +1,49 @@
+{
+  "schema": "leonardo.t3n.action-receipt.v0.1",
+  "issuedAt": "2026-06-15T03:21:44.513Z",
+  "agent": {
+    "name": "leonardo-protected-action-agent",
+    "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df"
+  },
+  "passportId": "awe_7a65d5be8a8099cb278e024c4698acb7d17cc339c7339b546455f83127e515da",
+  "authority": {
+    "allowedActions": [
+      "agent-passport.audit-probe"
+    ],
+    "allowedTargets": [
+      "terminal3.testnet.audit-probe"
+    ],
+    "maxAmountCents": 0,
+    "currency": "USD",
+    "piiMode": "placeholder-only"
+  },
+  "request": {
+    "action": "agent-passport.audit-probe",
+    "target": "terminal3.testnet.audit-probe",
+    "amountCents": 0,
+    "currency": "USD",
+    "purpose": "Terminal 3 no-money/no-PII audit-probe invocation",
+    "piiRefHashes": []
+  },
+  "decision": {
+    "allowed": true,
+    "reason": "in-scope",
+    "requestId": "req-audit-20260615t032136561z",
+    "decidedAt": "2026-06-15T03:21:41.986Z"
+  },
+  "evidence": {
+    "t3n": {
+      "environment": "testnet",
+      "nodeUrl": "https://cn-api.sg.testnet.t3n.terminal3.io",
+      "status": "live-audited",
+      "did": "did:t3n:5c946503c2d9924f58ee273dbd2efba8d03a12df",
+      "auditEventId": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec94c9dd65c946503c2d9924f58ee273dbd2efba8d03a12df00000084b1d1c9358a5511fa:sha256:019dee496dfeb0485647b85424fdb0dfe17e73725604531eac691a5f2d9cca83",
+      "auditBatchKey": "5c946503c2d9924f58ee273dbd2efba8d03a12df0000019ec94c9dd65c946503c2d9924f58ee273dbd2efba8d03a12df00000084b1d1c9358a5511fa",
+      "auditEventHash": "sha256:019dee496dfeb0485647b85424fdb0dfe17e73725604531eac691a5f2d9cca83",
+      "auditEventCommitted": true,
+      "responseHash": "sha256:b3535b569e81c6d120689cd5e29835f77159cad464fa75a66f19879ffd1d3fe0"
+    },
+    "executePayloadHash": "sha256:2db0762c6bd72052719fa6b5be88a7a0d6147968cf4c17bd5cc618767220039c"
+  },
+  "receiptHash": "sha256:c5c7e61da5357538dbb129de4fc15fbccad0823e0e8cae1c093d51b3cae7f38a"
+}

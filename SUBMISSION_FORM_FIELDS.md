@@ -47,15 +47,20 @@ Under the simple checkout story, the repo includes a TypeScript Agent Passport /
 ## Completeness / verification
 
 ```text
+Best Agent scoring map:
+Completeness (30%)
+SDK integration in its entirety (40%)
+Creativity (30%)
+
 pnpm install --frozen-lockfile: passed
 pnpm verify: passed
-13 test files / 52 tests passed
+14 test files / 54 tests passed
 typecheck passed
 build passed
 local demo wrote receipts
 z-audit-probe cargo test/build/wasm validate: passed
 z-safe-egress-demo cargo test/build/wasm validate: passed
-fresh extracted story-patch bundle verification: passed
+fresh extracted rules-patch bundle verification: passed
 ```
 
 ## Demo instructions
@@ -76,8 +81,8 @@ pnpm t3n:sdk-breadth
 ## Current build artifact
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-story-patch-20260616T0217Z.tar.gz
-submission-bundles/FINAL_STORY_PATCH_SUBMISSION_RECEIPT_20260616T0217Z.md
+submission-bundles/terminal3-agent-passport-submission-rules-patch-20260616T1759Z.tar.gz
+submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
 ```
 
 ## Safe claim boundary
@@ -89,7 +94,7 @@ This is a testnet build and bounty demo. It proves local fail-closed authority g
 ## Developer report / docs gaps
 
 ```text
-Submit DEVREL_REPORT.md plus BUGS_AND_DOC_GAPS_RULE_COMPLIANT_APPENDIX_20260615T191349Z.md separately for the bug/docs bounty lane. The main BUIDL is the working build tarball above.
+Submit DEVREL_REPORT.md plus BUGS_AND_DOC_GAPS_RULE_COMPLIANT_APPENDIX_20260615T191349Z.md separately for the bug/docs bounty lane. The appendix contains 11 SDK/onboarding/docs findings and follows the rule that each report must be real, in-scope, actionable, verifiable, require a code/docs change, and contain reproduction. CHALLENGE_RULES_EXTRACT.md preserves the rule extract used for this mapping. The main BUIDL is the working build tarball above.
 ```
 
 ## Referral / contact fields

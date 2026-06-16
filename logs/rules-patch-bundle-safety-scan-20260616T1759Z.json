@@ -1,0 +1,13 @@
+{
+  "bundle": "submission-bundles/terminal3-agent-passport-submission-rules-patch-20260616T1759Z.tar.gz",
+  "members": 121,
+  "bad_env_names": [],
+  "git_dirs": [],
+  "node_modules": [],
+  "target_dirs": [],
+  "dist_dirs": [],
+  "nonempty_secret_assignments": [],
+  "private_key_pem_hits": [],
+  "raw_eth_files_flagged": [],
+  "required_members_missing": []
+}

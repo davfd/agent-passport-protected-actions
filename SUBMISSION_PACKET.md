@@ -70,15 +70,25 @@ repos/z-safe-egress-demo/          Rust/WIT tenant contract using http-with-plac
 
 ## Judging criteria mapping
 
-### Completeness
+The authoritative track text scores the Best Agent lane as:
 
-- `pnpm verify` passes: 13 test files / 52 tests.
+```text
+Completeness (30%)
+SDK integration in its entirety (40%)
+Creativity (30%)
+```
+
+This packet therefore optimizes for a concrete finished demo, broad verified Terminal 3 SDK/ADK surface, and a simple safe-checkout story a cold judge can understand quickly.
+
+### Completeness (30%)
+
+- `pnpm verify` passes: 14 test files / 54 tests.
 - Typecheck and build pass.
 - Local demo emits allowed, refused-over-cap, missing-delegation, and delegated-allowed receipts.
 - Rust/WIT contracts build for `wasm32-wasip2` and validate with `wasm-tools`.
 - Final bundle is verified from a fresh extract.
 
-### SDK / ADK integration
+### SDK integration in its entirety (40%)
 
 - Uses `@terminal3/t3n-sdk@3.5.2`.
 - Live smoke uses Terminal 3 testnet auth and usage paths.
@@ -87,7 +97,7 @@ repos/z-safe-egress-demo/          Rust/WIT tenant contract using http-with-plac
 - Safe-egress proof uses Terminal 3 self-grant semantics, `allowedHosts`, and `host:interfaces/http-with-placeholders@2.1.0`.
 - SDK breadth proof exercises auth, usage, wallet/history, KYC-boundary handling, and audit-read.
 
-### Creativity
+### Creativity (30%)
 
 Most agent demos stop at tool execution. This one makes action accountable before execution:
 
@@ -118,7 +128,7 @@ wasm-tools validate target/wasm32-wasip2/release/z_safe_egress_demo.wasm
 Observed latest results:
 
 ```text
-pnpm verify: 13 test files / 52 tests passed; typecheck passed; build passed; local demo wrote receipts.
+pnpm verify: 14 test files / 54 tests passed; typecheck passed; build passed; local demo wrote receipts.
 z-audit-probe: cargo test/build/wasm validate passed.
 z-safe-egress-demo: cargo test/build/wasm validate passed.
 ```
@@ -149,11 +159,13 @@ no legal authority claim
 
 Submit `DEVREL_REPORT.md` and `BUGS_AND_DOC_GAPS_RULE_COMPLIANT_APPENDIX_20260615T191349Z.md` separately for the bug/docs bounty lane. Do not confuse that report with the main build tarball.
 
+The countable appendix follows the challenge rule: every report is SDK/onboarding/docs related, describes a real issue that is in scope, actionable, and verifiable, names the required code/docs change, and includes a reproduction. The exact challenge extract used for this mapping is preserved in `CHALLENGE_RULES_EXTRACT.md`.
+
 ## Current submission artifact
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-story-patch-20260616T0217Z.tar.gz
-submission-bundles/FINAL_STORY_PATCH_SUBMISSION_RECEIPT_20260616T0217Z.md
+submission-bundles/terminal3-agent-passport-submission-rules-patch-20260616T1759Z.tar.gz
+submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
 ```
 
 ## Safe claim for bounty submission

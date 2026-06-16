@@ -1,0 +1,179 @@
+== z-audit-probe cargo test ==
+   Compiling serde_core v1.0.228
+   Compiling proc-macro2 v1.0.106
+   Compiling quote v1.0.45
+   Compiling unicode-ident v1.0.24
+   Compiling zmij v1.0.21
+   Compiling equivalent v1.0.2
+   Compiling wasmparser v0.243.0
+   Compiling hashbrown v0.17.1
+   Compiling foldhash v0.1.5
+   Compiling anyhow v1.0.102
+   Compiling bitflags v2.13.0
+   Compiling hashbrown v0.15.5
+   Compiling semver v1.0.28
+   Compiling serde_json v1.0.150
+   Compiling itoa v1.0.18
+   Compiling serde v1.0.228
+   Compiling memchr v2.8.2
+   Compiling prettyplease v0.2.37
+   Compiling syn v2.0.117
+   Compiling wasm-encoder v0.243.0
+   Compiling unicode-xid v0.2.6
+   Compiling leb128fmt v0.1.0
+   Compiling log v0.4.32
+   Compiling id-arena v2.3.0
+   Compiling wit-bindgen-rust v0.49.0
+   Compiling heck v0.5.0
+   Compiling wit-bindgen-rust-macro v0.49.0
+   Compiling wit-bindgen v0.49.0
+   Compiling indexmap v2.14.0
+   Compiling serde_derive v1.0.228
+   Compiling wit-parser v0.243.0
+   Compiling wasm-metadata v0.243.0
+   Compiling wit-bindgen-core v0.49.0
+   Compiling wit-component v0.243.0
+   Compiling z-audit-probe v0.1.0 (/home/exor/Leonardo/hackathons/terminal3-adk/_github_publish/agent-passport-protected-actions/repos/z-audit-probe)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 9.83s
+     Running unittests src/lib.rs (repos/z-audit-probe/target/debug/deps/z_audit_probe-235d741c7516374b)
+
+running 1 test
+test tests::contract_version_is_semver ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests z_audit_probe
+
+running 1 test
+test src/lib.rs - __export_audit_probe_impl (line 19) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+== z-audit-probe wasm build ==
+   Compiling serde_core v1.0.228
+   Compiling proc-macro2 v1.0.106
+   Compiling quote v1.0.45
+   Compiling unicode-ident v1.0.24
+   Compiling zmij v1.0.21
+   Compiling hashbrown v0.17.1
+   Compiling foldhash v0.1.5
+   Compiling equivalent v1.0.2
+   Compiling wasmparser v0.243.0
+   Compiling hashbrown v0.15.5
+   Compiling semver v1.0.28
+   Compiling anyhow v1.0.102
+   Compiling bitflags v2.13.0
+   Compiling serde v1.0.228
+   Compiling serde_json v1.0.150
+   Compiling itoa v1.0.18
+   Compiling prettyplease v0.2.37
+   Compiling memchr v2.8.2
+   Compiling syn v2.0.117
+   Compiling wasm-encoder v0.243.0
+   Compiling unicode-xid v0.2.6
+   Compiling leb128fmt v0.1.0
+   Compiling log v0.4.32
+   Compiling id-arena v2.3.0
+   Compiling heck v0.5.0
+   Compiling wit-bindgen-rust v0.49.0
+   Compiling wit-bindgen-rust-macro v0.49.0
+   Compiling wit-bindgen v0.49.0
+   Compiling indexmap v2.14.0
+   Compiling serde_derive v1.0.228
+   Compiling wit-parser v0.243.0
+   Compiling wasm-metadata v0.243.0
+   Compiling wit-bindgen-core v0.49.0
+   Compiling wit-component v0.243.0
+   Compiling z-audit-probe v0.1.0 (/home/exor/Leonardo/hackathons/terminal3-adk/_github_publish/agent-passport-protected-actions/repos/z-audit-probe)
+    Finished `release` profile [optimized] target(s) in 10.09s
+243ebb088c125e8f95c08bb8b042c1a03b155c0fb675f139a8bcb0e710cf232b  repos/z-audit-probe/target/wasm32-wasip2/release/z_audit_probe.wasm
+== z-safe-egress-demo cargo test ==
+   Compiling serde_core v1.0.228
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.45
+   Compiling foldhash v0.1.5
+   Compiling wasmparser v0.243.0
+   Compiling equivalent v1.0.2
+   Compiling zmij v1.0.21
+   Compiling hashbrown v0.17.1
+   Compiling hashbrown v0.15.5
+   Compiling bitflags v2.13.0
+   Compiling anyhow v1.0.102
+   Compiling semver v1.0.28
+   Compiling itoa v1.0.18
+   Compiling serde v1.0.228
+   Compiling serde_json v1.0.150
+   Compiling syn v2.0.117
+   Compiling memchr v2.8.2
+   Compiling wasm-encoder v0.243.0
+   Compiling prettyplease v0.2.37
+   Compiling unicode-xid v0.2.6
+   Compiling leb128fmt v0.1.0
+   Compiling id-arena v2.3.0
+   Compiling log v0.4.32
+   Compiling wit-bindgen-rust v0.49.0
+   Compiling heck v0.5.0
+   Compiling wit-bindgen-rust-macro v0.49.0
+   Compiling wit-bindgen v0.49.0
+   Compiling indexmap v2.14.0
+   Compiling serde_derive v1.0.228
+   Compiling wit-parser v0.243.0
+   Compiling wasm-metadata v0.243.0
+   Compiling wit-bindgen-core v0.49.0
+   Compiling wit-component v0.243.0
+   Compiling z-safe-egress-demo v0.1.0 (/home/exor/Leonardo/hackathons/terminal3-adk/_github_publish/agent-passport-protected-actions/repos/z-safe-egress-demo)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 10.25s
+     Running unittests src/lib.rs (repos/z-safe-egress-demo/target/debug/deps/z_safe_egress_demo-2f0a5b1455b57edf)
+
+running 2 tests
+test tests::contract_version_is_semver ... ok
+test tests::contract_version_is_v0_1_0 ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests z_safe_egress_demo
+
+running 1 test
+test src/lib.rs - __export_safe_egress_demo_impl (line 19) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+== z-safe-egress-demo wasm build ==
+   Compiling serde_core v1.0.228
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling zmij v1.0.21
+   Compiling quote v1.0.45
+   Compiling hashbrown v0.17.1
+   Compiling foldhash v0.1.5
+   Compiling equivalent v1.0.2
+   Compiling wasmparser v0.243.0
+   Compiling hashbrown v0.15.5
+   Compiling bitflags v2.13.0
+   Compiling semver v1.0.28
+   Compiling anyhow v1.0.102
+   Compiling serde_json v1.0.150
+   Compiling serde v1.0.228
+   Compiling memchr v2.8.2
+   Compiling syn v2.0.117
+   Compiling wasm-encoder v0.243.0
+   Compiling prettyplease v0.2.37
+   Compiling itoa v1.0.18
+   Compiling log v0.4.32
+   Compiling unicode-xid v0.2.6
+   Compiling leb128fmt v0.1.0
+   Compiling id-arena v2.3.0
+   Compiling heck v0.5.0
+   Compiling wit-bindgen-rust v0.49.0
+   Compiling wit-bindgen-rust-macro v0.49.0
+   Compiling wit-bindgen v0.49.0
+   Compiling indexmap v2.14.0
+   Compiling serde_derive v1.0.228
+   Compiling wit-parser v0.243.0
+   Compiling wasm-metadata v0.243.0
+   Compiling wit-component v0.243.0
+   Compiling wit-bindgen-core v0.49.0
+   Compiling z-safe-egress-demo v0.1.0 (/home/exor/Leonardo/hackathons/terminal3-adk/_github_publish/agent-passport-protected-actions/repos/z-safe-egress-demo)
+    Finished `release` profile [optimized] target(s) in 10.15s
+224ce92c892d9b2262639fd5ba5fe00ff9a33811b5c202cb878d72c9f2f4de79  repos/z-safe-egress-demo/target/wasm32-wasip2/release/z_safe_egress_demo.wasm

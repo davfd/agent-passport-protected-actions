@@ -62,7 +62,7 @@ safe boundary: testnet only; no raw PII; no money movement; no KYC/human-identit
 Latest verification:
 
 ```text
-pnpm verify: 13 test files / 52 tests passed; typecheck passed; build passed; local demo wrote receipts.
+pnpm verify: 14 test files / 54 tests passed; typecheck passed; build passed; local demo wrote receipts.
 pnpm t3n:sdk-breadth: ok=true; auth/usage/wallet/history/audit-read live-submitted; humanIdentity safeClaim=not-proved-by-this-probe.
 ```
 
@@ -97,7 +97,7 @@ The post-SDK-breadth Council audit attempt produced two copy/privacy findings in
 - Bug/docs lane copy now points to BUGS_AND_DOC_GAPS_RULE_COMPLIANT_APPENDIX_20260615T191349Z.md as the countable artifact.
 - Stale judge-facing verification counts in DEVREL_REPORT.md and JUDGE_WALKTHROUGH_90S.md were updated from 11/45 to 13/52.
 - Public testnet wallet addresses in bundled historical logs were redacted or converted to generated test fixtures; receipts remain unchanged.
-- pnpm verify stayed green: 13 test files / 52 tests passed; typecheck passed; build passed; local demo wrote receipts.
+- pnpm verify stayed green: 14 test files / 54 tests passed; typecheck passed; build passed; local demo wrote receipts.
 ```
 
 Post-patch evidence:

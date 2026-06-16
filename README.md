@@ -42,11 +42,11 @@ https://github.com/davfd/agent-passport-protected-actions
 Current human-readable submission bundle:
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-story-patch-20260616T0217Z.tar.gz
-submission-bundles/FINAL_STORY_PATCH_SUBMISSION_RECEIPT_20260616T0217Z.md
+submission-bundles/terminal3-agent-passport-submission-rules-patch-20260616T1759Z.tar.gz
+submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
 ```
 
-The story-patch bundle supersedes the older `20260615T2047Z` bundle for submission copy. The core code and evidence are the same class of build; this patch makes the human-facing product story obvious.
+The rules-patch bundle supersedes the older story-patch bundle. The core code and evidence are the same class of build; this patch keeps the human-facing checkout story and adds the authoritative 30/40/30 scoring map plus rule-compliant bug/docs extract/test.
 
 ---
 
@@ -166,8 +166,8 @@ pnpm verify
 Expected result:
 
 ```text
-13 test files passed
-52 tests passed
+14 test files passed
+54 tests passed
 typecheck passed
 build passed
 local demo wrote allowed and refused receipts
@@ -242,8 +242,8 @@ Latest local verification:
 ```text
 pnpm install --frozen-lockfile: passed
 pnpm verify: passed
-13 test files passed
-52 tests passed
+14 test files passed
+54 tests passed
 typecheck passed
 build passed
 local demo wrote receipts
@@ -256,21 +256,21 @@ z-audit-probe cargo test/build/wasm validate: passed
 z-safe-egress-demo cargo test/build/wasm validate: passed
 ```
 
-The current story-patch bundle is also verified from a fresh extract. See:
+The current rules-patch bundle is also verified from a fresh extract. See:
 
 ```text
-submission-bundles/FINAL_STORY_PATCH_SUBMISSION_RECEIPT_20260616T0217Z.md
+submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
 ```
 
 ---
 
 ## Hackathon submission files
 
-For the main build submission, use the newest story-patch bundle and receipt:
+For the main build submission, use the newest rules-patch bundle and receipt:
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-story-patch-20260616T0217Z.tar.gz
-submission-bundles/FINAL_STORY_PATCH_SUBMISSION_RECEIPT_20260616T0217Z.md
+submission-bundles/terminal3-agent-passport-submission-rules-patch-20260616T1759Z.tar.gz
+submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
 SUBMISSION_FORM_FIELDS.md
 SUBMISSION_PACKET.md
 README.md

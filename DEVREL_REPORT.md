@@ -198,7 +198,7 @@ Leonardo BUIDL verification:
 Current verification summary:
 
 ```text
-pnpm verify: 13 test files / 52 tests passed; typecheck passed; build passed; local demo wrote receipts.
+pnpm verify: 14 test files / 54 tests passed; typecheck passed; build passed; local demo wrote receipts.
 pnpm t3n:sdk-breadth: auth/usage/wallet/history/audit-read ok; humanIdentity boundary refused before provider-session setup.
 pnpm registry:demo: missing external registry anchor refused before payload; matching policy + signed grant + governance witness + external registry anchor allowed.
 cargo test: 1 unit test + 1 doctest passed.

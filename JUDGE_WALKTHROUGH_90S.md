@@ -77,7 +77,7 @@ This is testnet only. It proves scoped gates, refusal before execution, Terminal
 
 ```text
 1. README first screen: safe AI checkout story.
-2. pnpm verify green log: 13 test files / 52 tests.
+2. pnpm verify green log: 14 test files / 54 tests.
 3. demo_allowed-allowed.json: $425 allowed.
 4. demo_refused_over_cap-refused.json: $650 refused against $500 cap.
 5. demo_delegated_missing_grant-refused.json: missing delegation refused.

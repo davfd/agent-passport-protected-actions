@@ -60,7 +60,7 @@ build passed
 local demo wrote receipts
 z-audit-probe cargo test/build/wasm validate: passed
 z-safe-egress-demo cargo test/build/wasm validate: passed
-fresh extracted rules-patch bundle verification: passed
+fresh extracted council-fix bundle verification: passed
 ```
 
 ## Demo instructions
@@ -81,8 +81,8 @@ pnpm t3n:sdk-breadth
 ## Current build artifact
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-rules-patch-20260616T1759Z.tar.gz
-submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
+submission-bundles/terminal3-agent-passport-submission-council-fix-20260616T1812Z.tar.gz
+submission-bundles/FINAL_COUNCIL_FIX_SUBMISSION_RECEIPT_20260616T1812Z.md
 ```
 
 ## Safe claim boundary

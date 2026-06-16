@@ -164,8 +164,8 @@ The countable appendix follows the challenge rule: every report is SDK/onboardin
 ## Current submission artifact
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-rules-patch-20260616T1759Z.tar.gz
-submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
+submission-bundles/terminal3-agent-passport-submission-council-fix-20260616T1812Z.tar.gz
+submission-bundles/FINAL_COUNCIL_FIX_SUBMISSION_RECEIPT_20260616T1812Z.md
 ```
 
 ## Safe claim for bounty submission

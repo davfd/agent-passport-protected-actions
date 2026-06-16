@@ -42,11 +42,11 @@ https://github.com/davfd/agent-passport-protected-actions
 Current human-readable submission bundle, from the repository root:
 
 ```text
-../submission-bundles/terminal3-agent-passport-submission-rules-patch-20260616T1759Z.tar.gz
-../submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
+../submission-bundles/terminal3-agent-passport-submission-council-fix-20260616T1812Z.tar.gz
+../submission-bundles/FINAL_COUNCIL_FIX_SUBMISSION_RECEIPT_20260616T1812Z.md
 ```
 
-The rules-patch bundle supersedes the older story-patch bundle. The core code and evidence are the same class of build; this patch keeps the human-facing checkout story and adds the authoritative 30/40/30 scoring map plus rule-compliant bug/docs extract/test.
+The council-fix bundle supersedes the older story-patch bundle. The core code and evidence are the same class of build; this patch keeps the human-facing checkout story and adds the authoritative 30/40/30 scoring map plus rule-compliant bug/docs extract/test.
 
 ---
 
@@ -255,21 +255,21 @@ z-audit-probe cargo test/build/wasm validate: passed
 z-safe-egress-demo cargo test/build/wasm validate: passed
 ```
 
-The current rules-patch bundle is also verified from a fresh extract. See:
+The current council-fix bundle is also verified from a fresh extract. See:
 
 ```text
-submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
+submission-bundles/FINAL_COUNCIL_FIX_SUBMISSION_RECEIPT_20260616T1812Z.md
 ```
 
 ---
 
 ## Hackathon submission files
 
-For the main build submission, use the newest rules-patch bundle and receipt:
+For the main build submission, use the newest council-fix bundle and receipt:
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-rules-patch-20260616T1759Z.tar.gz
-submission-bundles/FINAL_RULES_PATCH_SUBMISSION_RECEIPT_20260616T1759Z.md
+submission-bundles/terminal3-agent-passport-submission-council-fix-20260616T1812Z.tar.gz
+submission-bundles/FINAL_COUNCIL_FIX_SUBMISSION_RECEIPT_20260616T1812Z.md
 SUBMISSION_FORM_FIELDS.md
 SUBMISSION_PACKET.md
 README.md

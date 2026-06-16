@@ -1,6 +1,6 @@
 # Terminal 3 ADK bounty — 90-second judge walkthrough
 
-Purpose: fast demo/video or screenshot script that improves judge comprehension without changing claims.
+Purpose: make the project obvious to a cold judge.
 
 ## Rules for recording
 
@@ -13,91 +13,80 @@ Keep the proof bounded: testnet, no money, no raw PII, live tenant-contract audi
 
 ## 90-second narration
 
-### 0–10 sec — Problem / hook
+### 0-15 sec — Hook
 
-**Show:** `SUBMISSION_FORM_FIELDS.md` project name + tagline.  
-**Say:**
+Show `README.md` first screen.
+
+Say:
 
 ```text
-This is Agent Passport for Protected Actions: a Terminal-3-native trust envelope for AI-agent actions. The question is not just can the agent act, but who is acting, under what scope, what refuses, and what receipt remains.
+This is a safe checkout demo for AI agents. A finance team wants an AI assistant to handle routine vendor payments, but the agent should not get unlimited spend access. Here, a $425 test payment is allowed, a $650 payment is refused, and missing delegation is refused before any payload is created.
 ```
 
-### 10–25 sec — Criteria map
+### 15-30 sec — Local demo
 
-**Show:** `SUBMISSION_PACKET.md` lines “Why it fits the bounty” / chain diagram.  
-**Say:**
+Show `pnpm verify` or `pnpm demo:local` output.
+
+Say:
 
 ```text
-The DoraHacks criteria ask for completeness, Agent Auth SDK integration, and creativity. This build uses a T3 DID-shaped passport, scoped authority gates, Terminal 3 testnet SDK calls, a WASM tenant contract, and audit receipts.
+The local demo writes four receipts: allowed under cap, refused over cap, refused because delegation is missing, and allowed when the matching delegation grant is present.
 ```
 
-### 25–40 sec — Green verification
+### 30-45 sec — Gate code
 
-**Show:** terminal or saved log for `pnpm verify` and `pnpm registry:demo`.  
-**Say:**
+Show `src/protected-action.ts`.
+
+Say:
 
 ```text
-The local verifier passes: 13 test files, 52 tests, typecheck, build, and demo receipts. The registry demo refuses when required evidence is missing and allows only when policy, signed grant, witness, and external registry anchor match.
+This is the key safety behavior. The request must match the agent passport: action, target, amount, currency, issuer, revocation status, delegation, policy, witness, and registry evidence. If a required check fails, the function returns refused and no Terminal 3 execute payload exists.
 ```
 
-### 40–55 sec — Refusal before payload
+### 45-60 sec — Terminal 3 proof
 
-**Show:** refused receipt example, e.g. `demo_external_registry_missing-...-refused.json`.  
-**Say:**
+Show a live-audited receipt.
+
+Say:
 
 ```text
-The important safety behavior is pre-execution refusal. Missing or mismatched scope, issuer, revocation, delegation, policy, witness, or registry evidence refuses before a protected action payload is created.
+The live claim is deliberately bounded. On Terminal 3 testnet, a no-money/no-PII tenant contract emitted a committed host-stamped audit event. The receipt binds that audit event by ID and hash.
 ```
 
-### 55–70 sec — Live Terminal 3 audit proof
+### 60-75 sec — Safe egress
 
-**Show:** `live_audit_probe-...-live-audited.json` and audit event fields.  
-**Say:**
+Show safe-egress receipts.
+
+Say:
 
 ```text
-The live claim is deliberately bounded. On Terminal 3 testnet, a no-money/no-PII tenant contract emitted a committed host-stamped audit event. The Agent Passport receipt binds that audit event by ID and hash.
+The safe-egress path proves the same idea for outbound data: egress is denied before grant, scoped to one host after grant, placeholder failure returns no raw PII, and the allowed edge is audited.
 ```
 
-### 70–80 sec — DevRel/bug lane
+### 75-90 sec — Close
 
-**Show:** `BUGS_AND_DOC_GAPS_RULE_COMPLIANT_APPENDIX_20260615T191349Z.md` summary count + first few findings.  
-**Say:**
+Show safe claim boundary in `SUBMISSION_FORM_FIELDS.md`.
 
-```text
-The submission also includes a developer-experience report: 11 countable SDK/docs findings, each with reproduction, observed/expected behavior, and required code/docs fix framing.
-```
-
-### 80–90 sec — Safe boundary / close
-
-**Show:** safe claim boundary in `SUBMISSION_FORM_FIELDS.md`.  
-**Say:**
+Say:
 
 ```text
-This is testnet, no money, no raw PII. It proves scoped gates, Terminal 3 audit-event binding, and tamper-evident receipts. It does not claim production trust, legal authority, KYC, payment movement, or raw-PII flow.
+This is testnet only. It proves scoped gates, refusal before execution, Terminal 3 audit binding, and receipts. It does not claim production trust, legal authority, KYC, real payment movement, or raw PII flow.
 ```
 
 ## Screenshot checklist
 
-Take 7 screenshots if video is too slow:
-
 ```text
-1. DoraHacks criteria excerpt: completeness / SDK integration / creativity / bug-doc lane.
-2. SUBMISSION_FORM_FIELDS.md tagline + safe claim boundary.
-3. pnpm verify green log.
-4. refused receipt: missing external registry anchor refused before payload.
-5. allowed receipt: policy + signed grant + governance witness + external registry anchor allowed.
-6. live-audited Terminal 3 receipt with auditEventCommitted=true and audit hash fields.
-7. BUGS_AND_DOC_GAPS_RULE_COMPLIANT_APPENDIX_20260615T191349Z.md summary count: 11 findings.
+1. README first screen: safe AI checkout story.
+2. pnpm verify green log: 13 test files / 52 tests.
+3. demo_allowed-allowed.json: $425 allowed.
+4. demo_refused_over_cap-refused.json: $650 refused against $500 cap.
+5. demo_delegated_missing_grant-refused.json: missing delegation refused.
+6. live_audit_probe receipt with auditEventCommitted=true.
+7. safe-egress allowed receipt with auditEventCommitted=true and rawPiiReturned=false.
 ```
 
 ## One-line caption for upload
 
 ```text
-90-sec walkthrough: T3 DID Agent Passport, scoped pre-execution refusal, live no-money/no-PII Terminal 3 tenant-contract audit event, receipt binding, and 11-count DevRel/docs findings — with explicit no-production/no-KYC/no-payment/no-raw-PII boundary.
-```
-
-## If asked “what makes this creative?”
-
-```text
-It turns Terminal 3's identity, authorization, TEE contract, and audit-event primitives into a reusable agent accountability envelope: identity + scope + evidence gates + refusal + receipts, rather than another unconstrained tool-calling demo.
+Safe AI checkout on Terminal 3: $425 allowed, $650 refused, missing delegation refused, live no-money/no-PII audit receipts, scoped safe egress, and explicit no-production/no-KYC/no-real-payment boundary.
 ```

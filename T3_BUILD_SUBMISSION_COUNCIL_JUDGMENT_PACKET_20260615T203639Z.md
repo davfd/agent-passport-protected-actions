@@ -21,16 +21,16 @@ root README sha256: e4e6ba5858f2d925b385de207d723f6fab6a2d7138a6ff025d991093386f
 
 ## Build submission claim
 
-Agent Passport for Protected Actions is a Terminal-3-native build submission:
+Agent Passport for Protected Actions is a Terminal-3-native build submission, now framed around a concrete checkout assistant:
 
 ```text
-T3 DID / Agent Passport
-→ scoped authority envelope
-→ refusal before payload when scope/evidence missing
-→ no-money/no-raw-PII tenant-contract execution on T3 testnet
-→ committed Terminal 3 audit receipts
-→ scoped http-with-placeholders safe egress
-→ SDK breadth probe over auth / usage / wallet-history / audit-read / KYC-boundary
+AI checkout request
+→ Agent Passport / T3 DID
+→ amount + target + consent + evidence checks
+→ $425 approved test payment intent allowed
+→ $650 over-cap attempt refused before payload
+→ missing delegation refused before payload
+→ bounded Terminal 3 testnet proofs and receipts
 ```
 
 ## What was verified

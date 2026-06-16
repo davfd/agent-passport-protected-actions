@@ -47,7 +47,7 @@ READY_MAX_SUBMIT: 3
 REVISE_COPY_ONLY: 2
 BLOCK: 0
 Average score: 8.6 / 10
-Decision: READY_MAX_SUBMIT_AFTER_COPY_PRIVACY_PATCH
+Decision: SUPERSEDED_BY_STORY_PATCH_20260616T0217Z
 ```
 
 ## Seat substance
@@ -149,7 +149,7 @@ sha256:d466ae98fb24f7a9e4ea667be65c8fdf9412e096d2f0ee2829898d998e716338
 ## Current verdict
 
 ```text
-READY_MAX_SUBMIT_AFTER_COPY_PRIVACY_PATCH
+SUPERSEDED_BY_STORY_PATCH_20260616T0217Z
 ```
 
 No `BLOCK`. No new code/live Terminal 3 run needed. The remaining strategic weakness is competitive, not evidentiary: a rival could still beat this with equivalent proof plus external identity/KYC/governance authority, payment/test-merchant surface, MCP/A2A/ERC-8004/Entra/Web Bot Auth breadth, or polished hosted/video demo.

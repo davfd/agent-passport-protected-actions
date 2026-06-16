@@ -1,30 +1,37 @@
 # Agent Passport for Protected Actions
 
-An AI agent should not be able to do sensitive things just because it can type a command.
+This is a safe checkout demo for AI agents.
 
-This project shows a safer pattern:
+A finance or ops team wants an AI assistant to handle routine vendor checkout. That is useful, but dangerous if the agent can spend money or touch private customer data whenever it wants.
 
-1. Give the agent an identity.
-2. Check what the agent is allowed to do.
-3. Refuse before doing anything if the request is outside that permission.
-4. If the action is allowed, run it on Terminal 3 testnet.
-5. Save a receipt so a person can inspect what happened later.
-
-That is the whole idea.
-
-Think of it like a badge, a permission slip, and a logbook for an AI agent.
+This repo shows the safer pattern:
 
 ```text
-request from agent
+AI checkout request
   ↓
 check the agent passport
   ↓
-allowed? ── no ──> refuse and write a receipt
-  ↓ yes
-run the bounded Terminal 3 testnet action
+check amount, target, consent, policy, and evidence
   ↓
-write an audit receipt
+if anything is wrong: refuse before creating the action payload
+  ↓
+if everything is allowed: run the bounded Terminal 3 testnet action
+  ↓
+write a receipt a human can inspect
 ```
+
+The local demo is deliberately simple:
+
+| Scenario | Result |
+|---|---|
+| Create a $425 test payment intent for the approved test merchant | allowed |
+| Try a $650 payment when the cap is $500 | refused |
+| Require delegated consent but provide no grant | refused |
+| Provide the matching delegation grant | allowed |
+
+No judge has to infer the use case. It is a buyer/payment assistant with a spending cap and receipts.
+
+The deeper point: the same passport gate can sit in front of any protected agent action, not just checkout.
 
 Repository:
 
@@ -32,30 +39,30 @@ Repository:
 https://github.com/davfd/agent-passport-protected-actions
 ```
 
-Final build artifact:
+Current human-readable submission bundle:
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-build-council-20260615T2047Z.tar.gz
-sha256: f15da968634c48f5e1ebdf725664e8bbe510131a34403b30234d340483abaf2e
+submission-bundles/terminal3-agent-passport-submission-story-patch-20260616T0217Z.tar.gz
+submission-bundles/FINAL_STORY_PATCH_SUBMISSION_RECEIPT_20260616T0217Z.md
 ```
+
+The story-patch bundle supersedes the older `20260615T2047Z` bundle for submission copy. The core code and evidence are the same class of build; this patch makes the human-facing product story obvious.
 
 ---
 
 ## What this is
 
-This is a working Terminal 3 ADK demo.
+**Agent Passport for Protected Actions** is a Terminal 3 ADK demo for controlled AI-agent spending and other protected actions.
 
-It is built around one simple question:
+The demo asks one practical question:
 
-> Before an AI agent takes a protected action, can we prove who it is, what permission it has, why the action is allowed, and what happened afterward?
+> Before an AI agent creates a payment or protected action, can we prove who the agent is, what it is allowed to do, why this request is allowed, and what receipt remains afterward?
 
-The answer in this repo is yes, for a bounded testnet demo.
+In this repo, the answer is yes for a bounded Terminal 3 testnet demo.
 
-The project uses Terminal 3 for identity, testnet actions, and audit evidence. Around that, it adds a small local policy layer that decides whether the agent may act.
+The agent has a passport-like identity and authority object. A request must fit that authority before any Terminal 3 payload is created. If the request is too large, aimed at the wrong target, missing delegated consent, missing a policy anchor, missing a witness, or missing a required registry/audit anchor, the gate refuses first.
 
-If the request is valid, the demo builds the Terminal 3 action payload and writes a receipt.
-
-If the request is not valid, the demo refuses before it builds the payload. That matters. The agent does not "try anyway" and explain later. It stops first.
+That matters. The agent does not act first and explain later.
 
 ---
 
@@ -69,50 +76,51 @@ A human says:
 Pay this vendor invoice.
 ```
 
-A normal agent might try to do it if it has the tool.
+A normal tool-calling agent might try to do it if it has access to the payment tool.
 
 This project says no. First the agent has to answer:
 
 ```text
 Who am I?
-What action am I trying to take?
-Am I allowed to take this action?
-Is the amount under my limit?
+Am I allowed to create this kind of payment?
+Is this the approved merchant?
+Is the amount under my cap?
 Do I have the required delegation or consent?
-Can I produce a receipt if I act?
+Can I produce an audit receipt?
 ```
 
 If any answer is wrong or missing, the action is refused.
 
-This demo does not move real money. It uses bounded Terminal 3 testnet actions and no raw PII. The point is the control pattern, not a production payment system.
+This demo does not move real money. It uses Terminal 3 testnet, payment-intent shaped actions, placeholder-only private data, and receipts. The point is the control pattern.
 
 ---
 
 ## What it proves
 
-The repo proves that we can wrap an AI agent action in a practical permission check:
+The repo proves a practical agent-control pattern:
 
-- the agent has a passport-like identity object;
-- the requested action is checked against scope, caps, policy, consent, and witness evidence;
-- invalid requests fail closed;
-- allowed requests produce receipts;
-- Terminal 3 testnet calls and audit evidence are used;
-- safe egress is tested with placeholder-based private-data handling;
-- the SDK is exercised across auth, usage, wallet/history, audit-read, and KYC-boundary calls.
+- an agent can carry a Terminal 3 DID-shaped passport;
+- a payment/protected-action request can be checked before payload creation;
+- a $425 in-scope test payment intent can be allowed;
+- a $650 over-cap attempt can be refused;
+- a delegated-consent-required action can refuse when the grant is missing;
+- the same action can pass when the matching grant is present;
+- receipts record the decision without raw PII or private keys;
+- Terminal 3 testnet paths exercise auth, usage, wallet/history, audit-read, tenant-contract execution, safe egress, and audit receipts.
 
-In short:
+In one line:
 
 ```text
-the agent cannot act first and justify later
+the agent cannot spend first and justify later
 ```
 
-It must pass the gate before the protected action exists.
+It must pass the passport gate before the protected action exists.
 
 ---
 
 ## What it does not prove
 
-This is important.
+This is not a production payments product.
 
 This demo does not claim:
 
@@ -122,13 +130,11 @@ This demo does not claim:
 - real payment movement is proved;
 - raw PII access is proved.
 
-The correct claim is narrower:
+Correct claim:
 
 ```text
-This build proves Terminal-3-native scoped agent authority on testnet: auth, usage, wallet/history, audit-read, tenant-contract execution, scoped safe egress, audit receipts, and refusal boundaries.
+This build proves Terminal-3-native scoped agent authority on testnet: auth, usage, wallet/history, audit-read, tenant-contract execution, scoped safe egress, audit receipts, and refusal boundaries. It deliberately does not claim production trust, live KYC/human identity proofing, legal authority, real payment movement, or raw-PII disclosure.
 ```
-
-That narrower claim is the useful one.
 
 ---
 
@@ -136,13 +142,13 @@ That narrower claim is the useful one.
 
 If you have five minutes, read these in order:
 
-1. [`SUBMISSION_PACKET.md`](SUBMISSION_PACKET.md) - the hackathon submission summary.
+1. [`agent-passport-protected-actions/src/demo.ts`](agent-passport-protected-actions/src/demo.ts) - the $425 allowed / $650 refused / delegation demo.
 2. [`agent-passport-protected-actions/src/protected-action.ts`](agent-passport-protected-actions/src/protected-action.ts) - the main allow/refuse gate.
 3. [`agent-passport-protected-actions/src/passport.ts`](agent-passport-protected-actions/src/passport.ts) - the agent passport object.
-4. [`agent-passport-protected-actions/src/receipt.ts`](agent-passport-protected-actions/src/receipt.ts) - how receipts are hashed and written.
-5. [`submission-bundles/FINAL_BUILD_COUNCIL_SUBMISSION_RECEIPT_20260615T2047Z.md`](submission-bundles/FINAL_BUILD_COUNCIL_SUBMISSION_RECEIPT_20260615T2047Z.md) - final verification receipt.
+4. [`agent-passport-protected-actions/src/receipt.ts`](agent-passport-protected-actions/src/receipt.ts) - receipt hashing and writing.
+5. [`SUBMISSION_PACKET.md`](SUBMISSION_PACKET.md) - the hackathon submission summary.
 
-If you only want to run the demo, skip to the next section.
+If you only want to run the demo, use the next section.
 
 ---
 
@@ -167,16 +173,14 @@ build passed
 local demo wrote allowed and refused receipts
 ```
 
-`pnpm verify` runs:
+The local demo writes these receipts:
 
 ```text
-pnpm test
-pnpm typecheck
-pnpm build
-pnpm demo:local
+receipts/demo_allowed-allowed.json
+receipts/demo_refused_over_cap-refused.json
+receipts/demo_delegated_missing_grant-refused.json
+receipts/demo_delegated_allowed-allowed.json
 ```
-
-The local demo writes receipts for both allowed and refused actions.
 
 ---
 
@@ -193,6 +197,7 @@ cp .env.example .env
 # edit .env and set T3N_API_KEY=***
 set -a; . ./.env; set +a
 pnpm t3n:smoke
+pnpm t3n:audit-probe
 pnpm t3n:safe-egress
 pnpm t3n:sdk-breadth
 ```
@@ -205,6 +210,7 @@ Those scripts exercise Terminal 3 SDK paths and write sanitized logs/receipts.
 
 ```text
 agent-passport-protected-actions/
+  src/demo.ts              $425 allowed / $650 refused / delegation demo
   src/passport.ts          the agent identity/passport object
   src/protected-action.ts  the main permission gate
   src/receipt.ts           receipt hashing and writing
@@ -224,16 +230,17 @@ agent-passport-protected-actions/
 
 repos/z-audit-probe/       Rust/WIT contract that emits an audit event
 repos/z-safe-egress-demo/  Rust/WIT contract using http-with-placeholders
-submission-bundles/        final build package and final receipt
+submission-bundles/        curated build packages and receipts
 ```
 
 ---
 
 ## What was verified
 
-Final verification recorded:
+Latest local verification:
 
 ```text
+pnpm install --frozen-lockfile: passed
 pnpm verify: passed
 13 test files passed
 52 tests passed
@@ -242,50 +249,31 @@ build passed
 local demo wrote receipts
 ```
 
-The final bundle was also unpacked fresh and verified from scratch.
-
-The bundle scan found:
+Rust/WASM checks:
 
 ```text
-no .env
-no .git
-no node_modules
-no target dirs
-no raw ETH-address files
-no known secret values
-no private-key PEMs
-no nonempty T3N_API_KEY assignments
+z-audit-probe cargo test/build/wasm validate: passed
+z-safe-egress-demo cargo test/build/wasm validate: passed
 ```
 
-Final build bundle:
+The current story-patch bundle is also verified from a fresh extract. See:
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-build-council-20260615T2047Z.tar.gz
-sha256: f15da968634c48f5e1ebdf725664e8bbe510131a34403b30234d340483abaf2e
-size: 313412 bytes
-members: 115
-```
-
-Final receipt:
-
-```text
-submission-bundles/FINAL_BUILD_COUNCIL_SUBMISSION_RECEIPT_20260615T2047Z.md
-sha256: e42f55b08c307b01bdf5fea426cd37d563e626662f6cf2effc543b14f4778a60
+submission-bundles/FINAL_STORY_PATCH_SUBMISSION_RECEIPT_20260616T0217Z.md
 ```
 
 ---
 
 ## Hackathon submission files
 
-For the main build submission, use:
+For the main build submission, use the newest story-patch bundle and receipt:
 
 ```text
-submission-bundles/terminal3-agent-passport-submission-build-council-20260615T2047Z.tar.gz
-submission-bundles/FINAL_BUILD_COUNCIL_SUBMISSION_RECEIPT_20260615T2047Z.md
+submission-bundles/terminal3-agent-passport-submission-story-patch-20260616T0217Z.tar.gz
+submission-bundles/FINAL_STORY_PATCH_SUBMISSION_RECEIPT_20260616T0217Z.md
 SUBMISSION_FORM_FIELDS.md
 SUBMISSION_PACKET.md
 README.md
-T3_BUILD_SUBMISSION_COUNCIL_JUDGMENT_SYNTHESIS_20260615T2047Z.md
 ```
 
 For the separate bug/docs bounty lane, use:
@@ -299,23 +287,6 @@ Do not mix those two lanes. The tarball is the working build. The bug/docs files
 
 ---
 
-## Review note
-
-A visible Discord Council review was attempted, but the seats withdrew because of provider/usage-limit transport failures. Those withdrawals were not counted as approval.
-
-A fallback independent audit returned:
-
-```text
-READY_BUILD_SUBMIT: 4
-REVISE_COPY_ONLY: 1
-BLOCK: 0
-average: 8.8 / 10
-```
-
-The one copy-only issue was a stale hash in docs. It was patched, the build stayed green, and the final 2047Z bundle was rebuilt and rescanned.
-
----
-
 ## One-sentence version
 
-This repo shows how an AI agent can carry an identity and permission envelope, refuse unsafe requests before execution, run only bounded Terminal 3 testnet actions, and leave receipts a human can inspect.
+This repo shows a safe AI checkout assistant: it can create a bounded test payment intent when the agent passport allows it, refuses over-cap or missing-consent requests before execution, and leaves receipts a human can inspect.

@@ -1,0 +1,18 @@
+{
+  "bundle": "submission-bundles/terminal3-agent-passport-submission-story-patch-20260616T0217Z.tar.gz",
+  "sha256": "44eb67ad0fa6547a9d100fddb9c365a86fc1e32aeb4a3d7816ad595f93ea2d36",
+  "size": 307740,
+  "members": 115,
+  "bad_env_names": [],
+  "git_dirs": [],
+  "node_modules": [],
+  "target_dirs": [],
+  "dist_dirs": [],
+  "nonempty_secret_assignments": [],
+  "private_key_pem_hits": [],
+  "old_weak_readme_markers": [],
+  "old_status_markers": [],
+  "raw_eth_files_flagged": [],
+  "raw_eth_files_flagged_count": 0,
+  "ok": true
+}

@@ -1,3 +1,5 @@
+![Agent Passport for Protected Actions](assets/github-header-agent-passport-1500x500.png)
+
 # Agent Passport for Protected Actions
 
 This is a safe checkout demo for AI agents.
